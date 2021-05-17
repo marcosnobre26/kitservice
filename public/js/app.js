@@ -2015,8 +2015,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Header */ "./resources/js/components/Header.js");
 /* harmony import */ var _NewProject__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./NewProject */ "./resources/js/components/NewProject.js");
 /* harmony import */ var _ProjectsList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ProjectsList */ "./resources/js/components/ProjectsList.js");
@@ -2024,8 +2024,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _condominiums_Show__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./condominiums/Show */ "./resources/js/components/condominiums/Show.js");
 /* harmony import */ var _condominiums_Create__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./condominiums/Create */ "./resources/js/components/condominiums/Create.js");
 /* harmony import */ var _condominiums_Edit__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./condominiums/Edit */ "./resources/js/components/condominiums/Edit.js");
-/* harmony import */ var _Page404__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Page404 */ "./resources/js/components/Page404.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _kitnets_Index__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./kitnets/Index */ "./resources/js/components/kitnets/Index.js");
+/* harmony import */ var _kitnets_Create__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./kitnets/Create */ "./resources/js/components/kitnets/Create.js");
+/* harmony import */ var _kitnets_Edit__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./kitnets/Edit */ "./resources/js/components/kitnets/Edit.js");
+/* harmony import */ var _Page404__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Page404 */ "./resources/js/components/Page404.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2062,6 +2065,10 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
+
+
+
 var App = /*#__PURE__*/function (_Component) {
   _inherits(App, _Component);
 
@@ -2076,25 +2083,37 @@ var App = /*#__PURE__*/function (_Component) {
   _createClass(App, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.BrowserRouter, {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.BrowserRouter, {
         basename: "/",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Header__WEBPACK_IMPORTED_MODULE_2__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Switch, {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_Header__WEBPACK_IMPORTED_MODULE_2__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Switch, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
+              path: "/kitnets",
+              component: _kitnets_Index__WEBPACK_IMPORTED_MODULE_9__.default
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
+              path: "/create-kitnet",
+              component: _kitnets_Create__WEBPACK_IMPORTED_MODULE_10__.default
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
+              path: "/edit-kitnet/:id",
+              component: _kitnets_Edit__WEBPACK_IMPORTED_MODULE_11__.default
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
+              path: "/kitnet/:id",
+              component: _condominiums_Show__WEBPACK_IMPORTED_MODULE_6__.default
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
               path: "/condominiums",
               component: _condominiums_Index__WEBPACK_IMPORTED_MODULE_5__.default
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
               path: "/create-condominium",
               component: _condominiums_Create__WEBPACK_IMPORTED_MODULE_7__.default
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
               path: "/edit-condominium/:id",
               component: _condominiums_Edit__WEBPACK_IMPORTED_MODULE_8__.default
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
               path: "/condominium/:id",
               component: _condominiums_Show__WEBPACK_IMPORTED_MODULE_6__.default
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
               path: "*",
-              component: _Page404__WEBPACK_IMPORTED_MODULE_9__.default
+              component: _Page404__WEBPACK_IMPORTED_MODULE_12__.default
             })]
           })]
         })
@@ -2105,7 +2124,7 @@ var App = /*#__PURE__*/function (_Component) {
   return App;
 }(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 
-react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(App, {}), document.getElementById('app'));
+react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(App, {}), document.getElementById('app'));
 
 /***/ }),
 
@@ -3184,6 +3203,551 @@ var Show = function Show(props) {
 
 /***/ }),
 
+/***/ "./resources/js/components/kitnets/Create.js":
+/*!***************************************************!*\
+  !*** ./resources/js/components/kitnets/Create.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _services_KitnetService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/KitnetService */ "./resources/js/components/services/KitnetService.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+var Create = function Create() {
+  var initialKitnetState = {
+    number: "",
+    image: "",
+    qtd_bedrooms: "",
+    qtd_bathrooms: "",
+    value: "",
+    condominium_id: ""
+  };
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(initialKitnetState),
+      _useState2 = _slicedToArray(_useState, 2),
+      kitnet = _useState2[0],
+      setKitnet = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      submitted = _useState4[0],
+      setSubmitted = _useState4[1];
+
+  var handleInputChange = function handleInputChange(event) {
+    var _event$target = event.target,
+        name = _event$target.name,
+        value = _event$target.value;
+    setCondominium(_objectSpread(_objectSpread({}, kitnet), {}, _defineProperty({}, name, value)));
+  };
+
+  var saveCondominium = function saveCondominium() {
+    var data = {
+      number: kitnet.number,
+      qtd_bedrooms: kitnet.qtd_bedrooms,
+      qtd_bathrooms: kitnet.qtd_bathrooms,
+      value: kitnet.value,
+      condominium_id: kitnet.condominium_id,
+      image: kitnet.image
+    };
+    _services_KitnetService__WEBPACK_IMPORTED_MODULE_1__.default.create(data).then(function (response) {
+      setCondominium({
+        number: response.data.number,
+        image: response.data.image,
+        qtd_bedrooms: response.data.qtd_bedrooms,
+        qtd_bathrooms: response.data.qtd_bathrooms,
+        condominium_id: response.data.condominium_id,
+        value: response.data.value
+      });
+      setSubmitted(true);
+      console.log(response.data);
+      history.push('/kitnets');
+    })["catch"](function (e) {
+      console.log(e);
+    });
+  };
+
+  var newKitnet = function newKitnet() {
+    setKitnet(initialKitnetState);
+    setSubmitted(false);
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "submit-form",
+    children: submitted ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+        children: "You submitted successfully!"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+        className: "btn btn-success",
+        onClick: newKitnet,
+        children: "Add"
+      })]
+    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "form-group",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+          htmlFor: "name",
+          children: "Numero da Casa"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+          type: "text",
+          className: "form-control",
+          id: "number",
+          required: true,
+          value: condominium.number,
+          onChange: handleInputChange,
+          name: "number"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "form-group",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+          htmlFor: "name",
+          children: "Valor R$"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+          type: "text",
+          className: "form-control",
+          id: "value",
+          required: true,
+          value: condominium.value,
+          onChange: handleInputChange,
+          name: "value"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "form-group",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+          htmlFor: "address",
+          children: "Endere\xE7o"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+          type: "text",
+          className: "form-control",
+          id: "address",
+          required: true,
+          value: condominium.address,
+          onChange: handleInputChange,
+          name: "address"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "form-group",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+          htmlFor: "image",
+          children: "Imagem"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+          type: "text",
+          className: "form-control",
+          id: "image",
+          required: true,
+          value: condominium.image,
+          onChange: handleInputChange,
+          name: "image"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+        onClick: saveCondominium,
+        className: "btn btn-success",
+        children: "Submit"
+      })]
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Create);
+
+/***/ }),
+
+/***/ "./resources/js/components/kitnets/Edit.js":
+/*!*************************************************!*\
+  !*** ./resources/js/components/kitnets/Edit.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var _services_CondominiumsService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/CondominiumsService */ "./resources/js/components/services/CondominiumsService.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+ //import React, { Component } from 'react'
+
+
+
+
+
+
+
+var Edit = function Edit(props) {
+  var _useParams = (0,react_router__WEBPACK_IMPORTED_MODULE_4__.useParams)(),
+      id = _useParams.id;
+
+  console.log(id);
+  var initialCondominiumState = {
+    id: null,
+    name: "",
+    image: "",
+    address: ""
+  };
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(initialCondominiumState),
+      _useState2 = _slicedToArray(_useState, 2),
+      currentCondominium = _useState2[0],
+      setCurrentCondominium = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+      _useState4 = _slicedToArray(_useState3, 2),
+      message = _useState4[0],
+      setMessage = _useState4[1];
+
+  var getCondominium = function getCondominium(id) {
+    _services_CondominiumsService__WEBPACK_IMPORTED_MODULE_2__.default.getid(id).then(function (response) {
+      setCurrentCondominium(response.data);
+      console.log(response.data);
+    })["catch"](function (e) {
+      console.log(e);
+    });
+  };
+
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    getCondominium(props.match.params.id);
+  }, [props.match.params.id]);
+
+  var handleInputChange = function handleInputChange(event) {
+    var _event$target = event.target,
+        name = _event$target.name,
+        value = _event$target.value;
+    setCurrentCondominium(_objectSpread(_objectSpread({}, currentCondominium), {}, _defineProperty({}, name, value)));
+  };
+
+  var updatePublished = function updatePublished(status) {
+    var data = {
+      id: currentCondominium.id,
+      name: currentCondominium.name,
+      image: currentCondominium.image,
+      address: currentCondominium.address
+    };
+    _services_CondominiumsService__WEBPACK_IMPORTED_MODULE_2__.default.update(currentCondominium.id, data).then(function (response) {
+      setCurrentCondominium(_objectSpread({}, currentCondominium));
+      console.log(response.data);
+      history.push("/condominiums");
+    })["catch"](function (e) {
+      console.log(e);
+    });
+  };
+
+  var updateCondominium = function updateCondominium() {
+    _services_CondominiumsService__WEBPACK_IMPORTED_MODULE_2__.default.update(currentCondominium.id, currentCondominium).then(function (response) {
+      console.log(response.data);
+      props.history.push("/condominiums");
+      setMessage("The Condominium was updated successfully!");
+    })["catch"](function (e) {
+      console.log(e);
+    });
+  };
+
+  var deleteCondominium = function deleteCondominium() {
+    _services_CondominiumsService__WEBPACK_IMPORTED_MODULE_2__.default.remove(currentCondominium.id).then(function (response) {
+      console.log(response.data);
+      props.history.push("/condominiums");
+    })["catch"](function (e) {
+      console.log(e);
+    });
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    children: currentCondominium ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "edit-form",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h4", {
+        children: "Condominio"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "form-group",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+            htmlFor: "name",
+            children: "Nome"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+            type: "text",
+            className: "form-control",
+            id: "name",
+            name: "name",
+            value: currentCondominium.name,
+            onChange: handleInputChange
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "form-group",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+            htmlFor: "image",
+            children: "Image"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+            type: "text",
+            className: "form-control",
+            id: "image",
+            name: "image",
+            value: currentCondominium.image,
+            onChange: handleInputChange
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "form-group",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+            htmlFor: "address",
+            children: "Endere\xE7o"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+            type: "text",
+            className: "form-control",
+            id: "address",
+            name: "address",
+            value: currentCondominium.address,
+            onChange: handleInputChange
+          })]
+        })]
+      }), currentCondominium.published ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+        className: "badge badge-primary mr-2",
+        onClick: function onClick() {
+          return updatePublished(false);
+        },
+        children: "UnPublish"
+      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+        className: "badge badge-primary mr-2",
+        onClick: function onClick() {
+          return updatePublished(true);
+        },
+        children: "Publish"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+        className: "badge badge-danger mr-2",
+        onClick: deleteCondominium,
+        children: "Delete"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+        type: "submit",
+        className: "badge badge-success",
+        onClick: updateCondominium,
+        children: "Update"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+        children: message
+      })]
+    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+        children: "Please click on a Condominium..."
+      })]
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Edit);
+
+/***/ }),
+
+/***/ "./resources/js/components/kitnets/Index.js":
+/*!**************************************************!*\
+  !*** ./resources/js/components/kitnets/Index.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _services_KitnetService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/KitnetService */ "./resources/js/components/services/KitnetService.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+var Index = function Index(route) {
+  var history = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useHistory)();
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([{
+    id: null,
+    number: "",
+    image: "",
+    qtd_bedrooms: "",
+    qtd_bathrooms: "",
+    value: "",
+    condominium_id: ""
+  }]),
+      _useState2 = _slicedToArray(_useState, 2),
+      kitnets = _useState2[0],
+      setKitnets = _useState2[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    retrieveKitnets();
+  }, []);
+
+  var retrieveKitnets = function retrieveKitnets() {
+    _services_KitnetService__WEBPACK_IMPORTED_MODULE_1__.default.get().then(function (response) {
+      console.log(response.data);
+      setKitnets(response.data);
+      console.log(response.data);
+    })["catch"](function (e) {
+      console.log(e);
+    });
+  };
+
+  var viewKitnet = function viewKitnet(id) {
+    history.push("/kitnet/" + id);
+  };
+
+  var editKitnet = function editKitnet(id) {
+    history.push("/edit-kitnet/" + id);
+  };
+
+  var deleteKitnet = function deleteKitnet(id) {
+    _services_KitnetService__WEBPACK_IMPORTED_MODULE_1__.default.remove(id).then(function (response) {
+      console.log(response.data);
+      window.location.reload();
+    })["catch"](function (e) {
+      console.log(e);
+    });
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "list row",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "card-body",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "col-12",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+          className: "btn btn-primary btn-sm mb-3",
+          to: "/create-condominium",
+          children: "Cadastrar Novo Condominio"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("table", {
+          className: "table",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("thead", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("tr", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+                scope: "col",
+                children: "#"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+                scope: "col",
+                children: "Numero"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+                scope: "col",
+                children: "Qtd de Quartos"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+                scope: "col",
+                children: "Qtd de Banheiros"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+                scope: "col",
+                children: "Pre\xE7o"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+                scope: "col",
+                children: "A\xE7\xF5es"
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("tbody", {
+            children: kitnets.map(function (kitnet) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("tr", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+                  scope: "row",
+                  children: "1"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+                  children: kitnet.number
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+                  children: kitnet.qtd_bedrooms
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+                  children: kitnet.qtd_bathrooms
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+                  children: kitnet.value
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                    className: "badge badge-primary mr-2",
+                    onClick: function onClick() {
+                      return viewKitnet(kitnet.id);
+                    },
+                    children: "Visualizar"
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                    className: "badge badge-success",
+                    onClick: function onClick() {
+                      return editKitnet(kitnet.id);
+                    },
+                    children: "Editar"
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                    className: "badge badge-danger mr-2",
+                    onClick: function onClick() {
+                      return deleteKitnet(kitnet.id);
+                    },
+                    children: "Deletar"
+                  })
+                })]
+              }, kitnet.id);
+            })
+          })]
+        })]
+      })
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Index);
+
+/***/ }),
+
 /***/ "./resources/js/components/services/CondominiumsService.js":
 /*!*****************************************************************!*\
   !*** ./resources/js/components/services/CondominiumsService.js ***!
@@ -3217,6 +3781,51 @@ var update = function update(id, data) {
 
 var remove = function remove(id) {
   return axios__WEBPACK_IMPORTED_MODULE_0___default().delete("/api/condominium/".concat(id));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  remove: remove,
+  create: create,
+  get: get,
+  getid: getid,
+  update: update
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/services/KitnetService.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/services/KitnetService.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var get = function get() {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/kitnets');
+};
+
+var create = function create(data) {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default().post("/api/kitnet", data);
+};
+
+var getid = function getid(id) {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default().get("/api/kitnet/".concat(id));
+};
+
+var update = function update(id, data) {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default().put("/api/kitnet/".concat(id), data);
+};
+
+var remove = function remove(id) {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default().delete("/api/kitnet/".concat(id));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({

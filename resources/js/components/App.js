@@ -8,6 +8,11 @@ import CondominiumsList from './condominiums/Index'
 import SingleCondominium from './condominiums/Show'
 import NewCondominium from './condominiums/Create'
 import EditCondominium from './condominiums/Edit'
+
+import KitnetsList from './kitnets/Index'
+import NewKitnet from './kitnets/Create'
+import EditKitnet from './kitnets/Edit'
+import SingleKitnet from './condominiums/Show'
 import Page404 from './Page404'
 
 
@@ -18,6 +23,11 @@ class App extends Component {
                 <div>
                     <Header />
                     <Switch>
+                        <Route path='/kitnets' component={KitnetsList} />
+                        <Route path='/create-kitnet' component={NewKitnet} />
+                        <Route path='/edit-kitnet/:id' component={EditKitnet} />
+                        <Route path='/kitnet/:id' component={SingleKitnet} />
+
                         <Route path='/condominiums' component={CondominiumsList} />
                         <Route path='/create-condominium' component={NewCondominium} />
                         <Route path='/edit-condominium/:id' component={EditCondominium} />
