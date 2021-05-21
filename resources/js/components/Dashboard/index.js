@@ -4,6 +4,9 @@ import CondominiumsList from "./condominiums/Index";
 import SingleCondominium from "./condominiums/Show";
 import NewCondominium from "./condominiums/Create";
 import EditCondominium from "./condominiums/Edit";
+
+import CommercialRoomsList from "./commercialrooms/Index";
+
 import Header from "../Header";
 import Sidebar from "./sidebar";
 
@@ -18,11 +21,11 @@ const Dashboard = () => {
     return (
         <div>
             <Header />
-            <div class="row">
-                <div class="col-3">
+            <div className="row">
+                <div className="col-3">
                     <Sidebar />
                 </div>
-                <div class="col-9">
+                <div className="col-9">
                     <Switch>
                         <Route exact path={`${path}/`} component={HomeDashboard} />
 
@@ -50,6 +53,8 @@ const Dashboard = () => {
                             path={`${path}/condominium/:id`}
                             component={SingleCondominium}
                         />
+
+                        <Route path={`${path}/commercialrooms`} component={CommercialRoomsList} />
                     </Switch>
                 </div>
             </div>

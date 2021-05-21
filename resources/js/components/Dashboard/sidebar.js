@@ -36,6 +36,10 @@ const Sidebar = () => {
               <CDBSidebarMenuItem icon="building">Kitnets</CDBSidebarMenuItem>
             </NavLink>
 
+            <NavLink exact to="/adm/commercialrooms" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="business-time">Salas Comerciais</CDBSidebarMenuItem>
+            </NavLink>
+
             <NavLink
               exact
               to="/hero404"

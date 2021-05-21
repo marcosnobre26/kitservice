@@ -11,6 +11,6 @@ class KitNet extends Model
 
     protected $table = 'kit_nets';
     
-    protected $fillable = ['number', 'image', 'qtd_bedrooms','qtd_bedrooms','value','condominium_id'];
+    protected $fillable = ['number', 'image', 'qtd_bedrooms','qtd_bathrooms','value','condominium_id'];
 
 }

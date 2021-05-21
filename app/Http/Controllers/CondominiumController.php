@@ -45,11 +45,11 @@ class CondominiumController extends Controller
         return response()->json('Condominio criado!');
       }
     
-      public function show($id)
-      {
+    public function show($id)
+    {
         $condominium = Condominium::find($id);
         return $condominium->toJson();
-      }
+    }
 
     public function update(Request $request, $id)
     {
