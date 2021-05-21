@@ -21,7 +21,6 @@ class CondominiumController extends Controller
     {
         $condominiums = Condominium::orderBy('name')->get();
         return $condominiums->toJson();
-        //return 'teste';
     }
 
     public function create()
