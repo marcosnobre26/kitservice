@@ -1,36 +1,32 @@
 import React, { useState } from "react";
-import KitnetService from "../../services/KitnetService";
+import CondominiumService from "../../services/KitnetService";
 
 const Create = () => {
-    const initialKitnetState = {
+    const initialCommercialroomState = {
         number: "",
         image: "",
         qtd_bedrooms: "",
-        qtd_bathrooms: "",
         value: "",
-        condominium_id: "",
     };
-    const [kitnet, setKitnet] = useState(initialKitnetState);
+    const [commercialroom, setKitnet] = useState(initialKitnetState);
     const [submitted, setSubmitted] = useState(false);
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
-        setKitnet({ ...kitnet, [name]: value });
+        setCondominium({ ...kitnet, [name]: value });
     };
 
-    const saveKitnet = () => {
+    const saveCondominium = () => {
         var data = {
             number: kitnet.number,
             qtd_bedrooms: kitnet.qtd_bedrooms,
-            qtd_bathrooms: kitnet.qtd_bathrooms,
             value: kitnet.value,
-            condominium_id: kitnet.condominium_id,
             image: kitnet.image,
         };
 
-        KitnetService.create(data)
+        CondominiumService.create(data)
             .then((response) => {
-                setKitnet({
+                setCondominium({
                     number: response.data.number,
                     image: response.data.image,
                     qtd_bedrooms: response.data.qtd_bedrooms,
@@ -56,7 +52,7 @@ const Create = () => {
         <div className="submit-form">
             {submitted ? (
                 <div>
-                    <h4>Você adicionou uma nova KiNet!</h4>
+                    <h4>You submitted successfully!</h4>
                     <button className="btn btn-success" onClick={newKitnet}>
                         Add
                     </button>
@@ -70,7 +66,7 @@ const Create = () => {
                             className="form-control"
                             id="number"
                             required
-                            value={kitnet.number}
+                            value={condominium.number}
                             onChange={handleInputChange}
                             name="number"
                         />
@@ -83,7 +79,7 @@ const Create = () => {
                             className="form-control"
                             id="value"
                             required
-                            value={kitnet.value}
+                            value={condominium.value}
                             onChange={handleInputChange}
                             name="value"
                         />
@@ -96,7 +92,7 @@ const Create = () => {
                             className="form-control"
                             id="address"
                             required
-                            value={kitnet.address}
+                            value={condominium.address}
                             onChange={handleInputChange}
                             name="address"
                         />
@@ -109,14 +105,14 @@ const Create = () => {
                             className="form-control"
                             id="image"
                             required
-                            value={kitnet.image}
+                            value={condominium.image}
                             onChange={handleInputChange}
                             name="image"
                         />
                     </div>
 
                     <button
-                        onClick={saveKitnet}
+                        onClick={saveCondominium}
                         className="btn btn-success"
                     >
                         Submit

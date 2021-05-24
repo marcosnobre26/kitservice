@@ -37,3 +37,9 @@ Route::post('/kitnet', 'KitnetController@store');
 Route::get('/kitnet/{id}', 'KitnetController@show');
 Route::delete('/kitnet/{id}', 'KitnetController@destroy');
 Route::put('/kitnet/{id}', 'KitnetController@update');
+
+Route::get('/coomercial-rooms', 'CommercialRoomController@index');
+Route::post('/coomercial-room', 'CommercialRoomController@store');
+Route::get('/coomercial-room/{id}', 'CommercialRoomController@show');
+Route::delete('/coomercial-room/{id}', 'CommercialRoomController@destroy');
+Route::put('/coomercial-room/{id}', 'CommercialRoomController@update');

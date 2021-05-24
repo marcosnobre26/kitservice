@@ -3,30 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\KitNet;
+use App\Models\CommercialRoom;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 
-class KitNetController extends Controller
+class CommercialRoomController extends Controller
 {
     public function __construct()
     {
-        /*$this->middleware('permission:banks_create', ['only' => ['create', 'store']]);
-        $this->middleware('permission:banks_edit', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:banks_view', ['only' => ['show', 'index']]);
-        $this->middleware('permission:banks_delete', ['only' => ['destroy']]);*/
     }
 
     public function index()
     {
-        $kitnets = KitNet::orderBy('number')->get();
-        return $kitnets->toJson();
+        $commercialroom = CommercialRoom::orderBy('number')->get();
+        return $commercialroom->toJson();
     }
 
-    /*public function create()
+    public function get($id)
     {
-        return view('banks.create');
-    }*/
+        $commercialroom = CommercialRoom::find($id)->get();
+        return $commercialroom->toJson();
+    }
 
     public function store(Request $request)
     {
@@ -35,39 +32,35 @@ class KitNetController extends Controller
             $this->rules($request)
         )->validate();
 
-        KitNet::create($request->all());
+
+        CommercialRoom::create($request->all());
 
         $validatedData = $request->validate([
             'number' => 'required',
             'image' => 'required',
             'qtd_bedrooms' => 'required',
-            'qtd_bathrooms' => 'required',
             'value' => 'required',
-            'condominium_id' => 'required',
             ]);
     
-        $kitnet = KitNet::create([
+        $commercialroom = CommercialRoom::create([
             'number' => $validatedData['number'],
             'image' => $validatedData['image'],
             'qtd_bedrooms' => $validatedData['qtd_bedrooms'],
-            'qtd_bathrooms' => $validatedData['qtd_bathrooms'],
-            'value' => $validatedData['value'],
-            'condominium_id' => $validatedData['condominium_id'],
+            'value' => $validatedData['value']
             ]);
     
-        return response()->json('Kit-Net criado!');
+        return response()->json('Sala Comercial criada!');
     }
     
     public function show($id)
     {
-        $kitnet = KitNet::find($id);
-        return $kitnet->toJson();
+        $commercialroom = CommercialRoom::find($id);
+        return $commercialroom->toJson();
     }
-
 
     public function update(Request $request, $id)
     {
-        $item = KitNet::findOrFail($id);
+        $item = CommercialRoom::findOrFail($id);
 
         Validator::make(
             $request->all(),
@@ -77,18 +70,18 @@ class KitNetController extends Controller
 
         $item->fill($request->all())->save();
 
-        return response()->json('Condominio Atualizado!');
+        return response()->json('Sala Comercial Atualizada!');
     }
 
     public function destroy($id)
     {
-        $item = KitNet::findOrFail($id);
+        $item = CommercialRoom::findOrFail($id);
 
         try {
             $item->delete();
-            return response()->json('Kit-net deletada!');
+            return response()->json('Sala Comercial deletada!');
         } catch (\Exception $e) {
-            return response()->json('Kit-net vinculada a outra Tabela!');
+            return response()->json('Sala Comercial vinculada a outra Tabela!');
         }
     }
 
