@@ -12,4 +12,9 @@ class Condominium extends Model
     protected $fillable = ['name', 'image','address'];
 
     protected $table = 'condominiums';
+
+    public function kitnets()
+    {
+        return $this->hasMany(KitNet::class);
+    }
 }

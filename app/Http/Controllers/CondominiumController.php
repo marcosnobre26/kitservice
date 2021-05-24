@@ -47,8 +47,8 @@ class CondominiumController extends Controller
     
     public function show($id)
     {
-        $condominium = Condominium::find($id);
-        return $condominium->toJson();
+        $condominium = Condominium::with('kitnets')->find($id);
+        return response()->json($condominium);
     }
 
     public function update(Request $request, $id)
