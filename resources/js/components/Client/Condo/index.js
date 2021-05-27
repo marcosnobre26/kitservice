@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import CondominiumsService from "../../services/CondominiumsService";
 import { useEffect, useState } from "react";
 import Description from "./Description";
+import Unavailable from "./Unavailable";
 const Condo = () => {
     const { id } = useParams();
     const [condo, setCondo] = useState();
@@ -19,6 +20,8 @@ const Condo = () => {
         getCondominiums();
     }, []);
     console.log(condo);
+    const kitnets = condo ? condo.kitnets : [];
+    console.log(kitnets);
     return (
         <Container>
             <Navbar />
@@ -26,7 +29,7 @@ const Condo = () => {
             {condo ? (
                 <Description title={condo.name} address={condo.address} />
             ) : null}
-            <Showcase />
+            {kitnets.length > 0 ? <Showcase /> : <Unavailable />}
             <Footer />
         </Container>
     );
