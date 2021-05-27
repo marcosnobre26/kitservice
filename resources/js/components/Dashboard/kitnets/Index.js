@@ -3,7 +3,7 @@ import { createBrowserHistory } from "history";
 import { useHistory, Link, useParams } from "react-router-dom";
 import KitnetService from "../../services/KitnetService";
 
-const Index = (route) => {
+const Index = ({id}) => {
     let history = useHistory();
     const [kitnets, setKitnets] = useState([
         {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\KitNet;
 use App\Models\Condominium;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -49,6 +50,12 @@ class CondominiumController extends Controller
     {
         $condominium = Condominium::with('kitnets')->find($id);
         return response()->json($condominium);
+    }
+
+    public function getForCondominium(Request $request, $id)
+    {
+        $kitnets = KitNet::where('condominium_id', $request->id)->get();
+        return $kitnets->toJson();
     }
 
     public function update(Request $request, $id)

@@ -2,6 +2,7 @@ import axios from "axios";
 //import React, { Component } from 'react'
 import React, { useState, useEffect } from "react";
 import CondominiumsService from "../../services/CondominiumsService";
+import Kitnets from "../kitnets/Index";
 
 const Show = (props) => {
     const initialCondominiumState = {
@@ -91,6 +92,8 @@ const Show = (props) => {
                     <p>{currentCondominium.address}</p>
                 </div>
             </div>
+
+            <Kitnets id={id}></Kitnets>
         </div>
     );
 };

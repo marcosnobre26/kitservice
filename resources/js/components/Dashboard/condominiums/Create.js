@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useHistory } from 'react-router-dom';
 import CondominiumService from "../../services/CondominiumsService";
 
 const Create = () => {
+    const history=useHistory();
     const initialCondominiumState = {
         name: "",
         image: "",
@@ -29,9 +31,10 @@ const Create = () => {
                     image: response.data.image,
                     address: response.data.address,
                 });
+                history.push("/adm/condominiums");
                 setSubmitted(true);
                 console.log(response.data);
-                history.push("/condominiums");
+                
             })
             .catch((e) => {
                 console.log(e);
@@ -40,6 +43,7 @@ const Create = () => {
 
     const newCondominium = () => {
         setCondominium(initialCondominiumState);
+
         setSubmitted(false);
     };
 

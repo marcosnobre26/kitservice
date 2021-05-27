@@ -23,10 +23,7 @@ class KitNetController extends Controller
         return $kitnets->toJson();
     }
 
-    /*public function create()
-    {
-        return view('banks.create');
-    }*/
+
 
     public function store(Request $request)
     {

@@ -31,6 +31,7 @@ Route::post('/condominium', 'CondominiumController@store');
 Route::get('/condominium/{id}', 'CondominiumController@show');
 Route::delete('/condominium/{id}', 'CondominiumController@destroy');
 Route::put('/condominium/{id}', 'CondominiumController@update');
+Route::get('/condominium/{id}/kitnets/', 'CondominiumController@getForCondominium');
 
 Route::get('/kitnets', 'KitnetController@index');
 Route::post('/kitnet', 'KitnetController@store');

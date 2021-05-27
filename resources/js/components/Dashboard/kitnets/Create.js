@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useHistory } from 'react-router-dom';
 import KitnetService from "../../services/KitnetService";
 
 const Create = () => {
+    const history=useHistory();
     const initialKitnetState = {
         number: "",
         image: "",
@@ -38,9 +40,10 @@ const Create = () => {
                     condominium_id: response.data.condominium_id,
                     value: response.data.value,
                 });
+                history.push("/adm/kitnets");
                 setSubmitted(true);
                 console.log(response.data);
-                history.push("/adm/kitnets");
+                
             })
             .catch((e) => {
                 console.log(e);
