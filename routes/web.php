@@ -18,7 +18,12 @@ use Illuminate\Support\Facades\Route;
 });*/
 
 //Route::view('/{path?}', 'app');
+Route::get('/teste', function () {
+    return 'Hello World';
+});
 
 Route::get('/{path?}', function () {
     return view('app'); // or wherever your React app is bootstrapped.
 })->where('path', '.*');
+
+
