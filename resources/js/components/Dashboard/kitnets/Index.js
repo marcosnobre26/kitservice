@@ -1,6 +1,5 @@
-import React, { useState, useContext, useEffect } from "react";
-import { createBrowserHistory } from "history";
-import { useHistory, Link, useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useHistory, Link } from "react-router-dom";
 import KitnetService from "../../services/KitnetService";
 
 const Index = ({id}) => {
@@ -34,11 +33,11 @@ const Index = ({id}) => {
     };
 
     const viewKitnet = (id) => {
-        history.push("/kitnet/" + id);
+        history.push("/adm/kitnet/" + id);
     };
 
     const editKitnet = (id) => {
-        history.push("/edit-kitnet/" + id);
+        history.push("/adm/edit-kitnet/" + id);
     };
 
     const deleteKitnet = (id) => {

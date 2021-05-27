@@ -6,6 +6,7 @@ import Home from "./Client/Home";
 import Rent from "./Client/Rent";
 import About from "./Client/About";
 import Dashboard from "./Dashboard";
+import Condo from "./Client/Condo";
 
 class App extends Component {
     render() {
@@ -15,6 +16,8 @@ class App extends Component {
                     <Switch>
                         <Route path="/" exact component={Home} />
                         <Route path="/rent" component={Rent} />
+                        <Route path="/condo/:id" component={Condo} />
+                        <Route path="/kitnet/:id" component={Rent} />
                         <Route path="/about" component={About} />
                         <Route path="/adm" component={Dashboard} />
                         <Route path="*" component={Page404} />

@@ -1,8 +1,8 @@
 import { Line, TitleStyled } from "./style";
 
-const RentTitle = () => (
+const RentTitle = ({ title }) => (
     <>
-        <TitleStyled>Condominio</TitleStyled>
+        <TitleStyled>{title ? title.toUpperCase() : "ALUGUE"}</TitleStyled>
         <Line />
     </>
 );
