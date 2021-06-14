@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+//use App\Http\Controllers\Admin\CondominiumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +18,19 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 
+//Route::resource('condominiunsadm', 'CondominiumController');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+Route::resource('admin/condominiums', 'Admin\CondominiumController');
+Route::resource('admin/kitnets', 'Admin\KitnetController');
+Route::resource('admin/comercialrooms', 'Admin\ComercialRoomController');
+
 //Route::view('/{path?}', 'app');
+Route::get('/teste', function () {
+    return 'Hello World';
+});
 
 Route::get('/{path?}', function () {
-    return view('app'); // or wherever your React app is bootstrapped.
+    return view('appp'); // or wherever your React app is bootstrapped.
 })->where('path', '.*');
+
+

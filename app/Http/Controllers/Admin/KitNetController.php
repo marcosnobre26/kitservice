@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Models\KitNet;
+use App\Models\Condominium;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 
@@ -19,18 +20,20 @@ class KitNetController extends Controller
 
     public function index()
     {
-        $kitnets = KitNet::orderBy('number')->get();
-        return $kitnets->toJson();
+        $data = KitNet::orderBy('number')->with('condominium')->paginate(5);
+        return view('kitnets.index', compact('data'));
+    }
+
+    public function create()
+    {
+        $condominiums = Condominium::orderBy('name')->get();
+        return view('kitnets.create', compact('condominiums'));
     }
 
 
 
     public function store(Request $request)
     {
-        /*Validator::make(
-            $request->all(),
-            $this->rules($request)
-        )->validate();*/
 
         KitNet::create($request->all());
 
@@ -52,13 +55,14 @@ class KitNetController extends Controller
             'condominium_id' => $validatedData['condominium_id'],
             ]);
     
-        return response()->json('Kit-Net criado!');
+        return redirect()->route('kitnets.index')
+            ->withStatus('Registro criado com sucesso.');
     }
     
     public function show($id)
     {
-        $kitnet = KitNet::find($id);
-        return $kitnet->toJson();
+        $item = KitNet::with('condominium')->find($id);
+        return view('kitnets.show', compact('item'));
     }
 
 
@@ -74,7 +78,8 @@ class KitNetController extends Controller
 
         $item->fill($request->all())->save();
 
-        return response()->json('Condominio Atualizado!');
+        return redirect()->route('kitnets.index')
+            ->withStatus('Registro atualizado com sucesso.');
     }
 
     public function destroy($id)
@@ -83,10 +88,18 @@ class KitNetController extends Controller
 
         try {
             $item->delete();
-            return response()->json('Kit-net deletada!');
+            return redirect()->route('kitnets.index')
+                ->withStatus('Registro deletado com sucesso.');
         } catch (\Exception $e) {
-            return response()->json('Kit-net vinculada a outra Tabela!');
+            return redirect()->route('kitnets.index')
+                ->withError('Registro vinculado á outra tabela, somente poderá ser excluído se retirar o vinculo.');
         }
+    }
+
+    public function edit($id)
+    {
+        $item = KitNet::findOrFail($id);
+        return view('kitnets.edit', compact('item'));
     }
 
     /*private function rules(Request $request, $primaryKey = null, bool $changeMessages = false)

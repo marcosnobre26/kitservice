@@ -43,7 +43,6 @@ const Create = () => {
 
     const newCondominium = () => {
         setCondominium(initialCondominiumState);
-
         setSubmitted(false);
     };
 
