@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Models\KitNet;
+use App\Models\CommercialRoom;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 
-class KitNetController extends Controller
+class ComercialRoomController extends Controller
 {
     public function __construct()
     {
@@ -19,74 +19,87 @@ class KitNetController extends Controller
 
     public function index()
     {
-        $kitnets = KitNet::orderBy('number')->get();
-        return $kitnets->toJson();
+        $data = CommercialRoom::orderBy('number')->paginate(5);
+        return view('comercialrooms.index', compact('data'));
+    }
+
+    public function create()
+    {
+        return view('comercialrooms.create');
     }
 
 
 
     public function store(Request $request)
     {
-        /*Validator::make(
-            $request->all(),
-            $this->rules($request)
-        )->validate();*/
-
-        KitNet::create($request->all());
-
         $validatedData = $request->validate([
             'number' => 'required',
             'image' => 'required',
             'qtd_bedrooms' => 'required',
-            'qtd_bathrooms' => 'required',
+            'address' => 'required',
             'value' => 'required',
-            'condominium_id' => 'required',
             ]);
     
-        $kitnet = KitNet::create([
+        $commercialroom = CommercialRoom::create([
             'number' => $validatedData['number'],
             'image' => $validatedData['image'],
             'qtd_bedrooms' => $validatedData['qtd_bedrooms'],
-            'qtd_bathrooms' => $validatedData['qtd_bathrooms'],
+            'address' => $validatedData['address'],
             'value' => $validatedData['value'],
-            'condominium_id' => $validatedData['condominium_id'],
             ]);
     
-        return response()->json('Kit-Net criado!');
+        return redirect()->route('comercialrooms.index')
+            ->withStatus('Registro criado com sucesso.');
     }
     
     public function show($id)
     {
-        $kitnet = KitNet::find($id);
-        return $kitnet->toJson();
+        $item = CommercialRoom::find($id);
+        return view('comercialrooms.show', compact('item'));
     }
 
 
     public function update(Request $request, $id)
     {
-        $item = KitNet::findOrFail($id);
+        $item = CommercialRoom::findOrFail($id);
 
-        Validator::make(
+        /*Validator::make(
             $request->all(),
             $this->rules($request, $item->getKey())
-        )->validate();
+        )->validate();*/
+        $validatedData = $request->validate([
+            'number' => 'required',
+            'image' => 'required',
+            'qtd_bedrooms' => 'required',
+            'address' => 'required',
+            'value' => 'required',
+            ]);
 
 
         $item->fill($request->all())->save();
 
-        return response()->json('Condominio Atualizado!');
+        return redirect()->route('comercialrooms.index')
+            ->withStatus('Registro atualizado com sucesso.');
     }
 
     public function destroy($id)
     {
-        $item = KitNet::findOrFail($id);
+        $item = CommercialRoom::findOrFail($id);
 
         try {
             $item->delete();
-            return response()->json('Kit-net deletada!');
+            return redirect()->route('comercialrooms.index')
+                ->withStatus('Registro deletado com sucesso.');
         } catch (\Exception $e) {
-            return response()->json('Kit-net vinculada a outra Tabela!');
+            return redirect()->route('comercialrooms.index')
+                ->withError('Registro vinculado á outra tabela, somente poderá ser excluído se retirar o vinculo.');
         }
+    }
+
+    public function edit($id)
+    {
+        $item = CommercialRoom::findOrFail($id);
+        return view('comercialrooms.edit', compact('item'));
     }
 
     /*private function rules(Request $request, $primaryKey = null, bool $changeMessages = false)

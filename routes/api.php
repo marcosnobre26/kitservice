@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CondominiumController;
 use App\Http\Controllers\KitNetController;
-use App\Http\Controllers\CondominiumController;
+use App\Http\Controllers\CommercialRoomController;
 
 /*
 |--------------------------------------------------------------------------

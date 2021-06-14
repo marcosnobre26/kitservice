@@ -80,6 +80,32 @@ const Create = () => {
                     </div>
 
                     <div className="form-group">
+                        <label htmlFor="name">Numero de Quartos</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="qtd_bedrooms"
+                            required
+                            value={kitnet.qtd_bedrooms}
+                            onChange={handleInputChange}
+                            name="qtd_bedrooms"
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label htmlFor="name">Numero de Banheiros</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="qtd_bathrooms"
+                            required
+                            value={kitnet.qtd_bathrooms}
+                            onChange={handleInputChange}
+                            name="qtd_bathrooms"
+                        />
+                    </div>
+
+                    <div className="form-group">
                         <label htmlFor="name">Valor R$</label>
                         <input
                             type="text"
@@ -102,6 +128,19 @@ const Create = () => {
                             value={kitnet.address}
                             onChange={handleInputChange}
                             name="address"
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label htmlFor="address">Condominio</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="condominium_id"
+                            required
+                            value={kitnet.condominium_id}
+                            onChange={handleInputChange}
+                            name="condominium_id"
                         />
                     </div>
 

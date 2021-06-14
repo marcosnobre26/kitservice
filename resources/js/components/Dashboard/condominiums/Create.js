@@ -46,23 +46,6 @@ const Create = () => {
         setSubmitted(false);
     };
 
-    const onChange = (e) => {
-        let files = e.target.files || e.dataTransfer.files;
-        if (!files.length)
-              return;
-        createImage(files[0]);
-    };
-
-    const createImage = (file) => {
-        let reader = new FileReader();
-        reader.onload = (e) => {
-          this.setState({
-            image: e.target.result
-          })
-        };
-        reader.readAsDataURL(file);
-      }
-
     return (
         <div className="submit-form">
             {submitted ? (
@@ -114,12 +97,6 @@ const Create = () => {
                             onChange={handleInputChange}
                             name="image"
                         />
-                    </div>
-
-                    <div className="form-group">
-                        <h1>React js Laravel File Upload Tutorial</h1>
-                        <input type="file"  onChange={onChange} />
-                        <button type="submit">Upload</button>
                     </div>
 
                     <button

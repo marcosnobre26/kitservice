@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ddeabc1ce42c24615f2fd0343a6ea0f2",
+    "content-hash": "b7f83b72a9334a6fe628cf9d0895f1e6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1150,6 +1150,78 @@
             "time": "2021-04-27T18:17:41+00:00"
         },
         {
+            "name": "laravelcollective/html",
+            "version": "v6.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaravelCollective/html.git",
+                "reference": "ae15b9c4bf918ec3a78f092b8555551dd693fde3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/ae15b9c4bf918ec3a78f092b8555551dd693fde3",
+                "reference": "ae15b9c4bf918ec3a78f092b8555551dd693fde3",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "^6.0|^7.0|^8.0",
+                "illuminate/routing": "^6.0|^7.0|^8.0",
+                "illuminate/session": "^6.0|^7.0|^8.0",
+                "illuminate/support": "^6.0|^7.0|^8.0",
+                "illuminate/view": "^6.0|^7.0|^8.0",
+                "php": ">=7.2.5"
+            },
+            "require-dev": {
+                "illuminate/database": "^6.0|^7.0|^8.0",
+                "mockery/mockery": "~1.0",
+                "phpunit/phpunit": "~8.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "6.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Collective\\Html\\HtmlServiceProvider"
+                    ],
+                    "aliases": {
+                        "Form": "Collective\\Html\\FormFacade",
+                        "Html": "Collective\\Html\\HtmlFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Collective\\Html\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Engebretson",
+                    "email": "adam@laravelcollective.com"
+                },
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "HTML and Form Builders for the Laravel Framework",
+            "homepage": "https://laravelcollective.com",
+            "support": {
+                "issues": "https://github.com/LaravelCollective/html/issues",
+                "source": "https://github.com/LaravelCollective/html"
+            },
+            "time": "2020-12-15T20:20:05+00:00"
+        },
+        {
             "name": "league/commonmark",
             "version": "1.5.8",
             "source": {
@@ -1589,6 +1661,62 @@
                 }
             ],
             "time": "2021-02-24T17:30:44+00:00"
+        },
+        {
+            "name": "netojose/laravel-bootstrap-4-forms",
+            "version": "3.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/netojose/laravel-bootstrap-4-forms.git",
+                "reference": "8800ce0ef53d73ae16b6c6600a8e90589c75d1c6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/netojose/laravel-bootstrap-4-forms/zipball/8800ce0ef53d73ae16b6c6600a8e90589c75d1c6",
+                "reference": "8800ce0ef53d73ae16b6c6600a8e90589c75d1c6",
+                "shasum": ""
+            },
+            "type": "package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "NetoJose\\Bootstrap4Forms\\Bootstrap4FormsServiceProvider"
+                    ],
+                    "aliases": {
+                        "Form": "NetoJose\\Bootstrap4Forms\\Bootstrap4FormsFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "NetoJose\\Bootstrap4Forms\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "José Sousa",
+                    "email": "sputinykster@gmail.com"
+                }
+            ],
+            "description": "Bootstrap 4 form builder for Laravel 5",
+            "keywords": [
+                "Forms",
+                "bootstrap",
+                "composer",
+                "form-builder",
+                "laravel",
+                "package",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/netojose/laravel-bootstrap-4-forms/issues",
+                "source": "https://github.com/netojose/laravel-bootstrap-4-forms/tree/3.0.5"
+            },
+            "time": "2021-01-06T13:48:35+00:00"
         },
         {
             "name": "nikic/php-parser",

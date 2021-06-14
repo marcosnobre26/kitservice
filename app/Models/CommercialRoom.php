@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CommercialRoom extends Model
+class CommercialRoom extends Model//mesma coisa dos atibutos de kitnets com apenas algumas diferenças
 {
     use HasFactory;
     
-    protected $fillable = ['number', 'image', 'qtd_bedrooms','value'];
+    protected $fillable = ['number', 'image', 'qtd_bedrooms','value', 'address'];
 
     protected $table = 'commercial_room';
 }
