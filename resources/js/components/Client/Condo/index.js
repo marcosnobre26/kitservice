@@ -29,7 +29,8 @@ const Condo = () => {
             {condo ? (
                 <Description title={condo.name} address={condo.address} />
             ) : null}
-            {kitnets.length > 0 ? <Showcase /> : <Unavailable />}
+            <Showcase />
+            {/* {kitnets.length > 0 ? <Showcase /> : <Unavailable />} */}
             <Footer />
         </Container>
     );

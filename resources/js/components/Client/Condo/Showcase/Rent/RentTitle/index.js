@@ -2,7 +2,7 @@ import { Line, TitleStyled } from "./style";
 
 const RentTitle = () => (
     <>
-        <TitleStyled>Condominio</TitleStyled>
+        <TitleStyled>Kitnet</TitleStyled>
         <Line />
     </>
 );

@@ -9,10 +9,17 @@ const options = [
     { name: "Condominios", id: 1 },
     { name: "Salas comerciais", id: 2 },
 ];
+const qtd_rooms = [
+    { name: "1", id: 1 },
+    { name: "2", id: 2 },
+    { name: "3", id: 3 },
+    { name: "4", id: 4 },
+];
 const Search = () => {
     const [category, setCategory] = useState();
     const [places, setPlaces] = useState();
     const [condo, setCondo] = useState();
+    const [rooms, setRooms] = useState();
 
     const getCondos = (value) => {
         setPlaces(null);
@@ -25,8 +32,21 @@ const Search = () => {
         <SearchStyle>
             <Title />
             <Categories>
-                <Select options={options} onSelect={getCondos} />
-                <Select options={places} onSelect={setCondo} />
+                <Select
+                    options={options}
+                    onSelect={getCondos}
+                    defaultValue={"Categoria"}
+                />
+                <Select
+                    options={places}
+                    onSelect={setCondo}
+                    defaultValue={"Condominio"}
+                />
+                <Select
+                    options={qtd_rooms}
+                    onSelect={setRooms}
+                    defaultValue={"Número de quartos"}
+                />
             </Categories>
             <SearchBtn />
         </SearchStyle>

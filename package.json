@@ -25,10 +25,12 @@
         "sass-loader": "^11.0.1"
     },
     "dependencies": {
+        "@brainhubeu/react-carousel": "^2.0.4",
         "cdbreact": "^1.1.0",
         "react-bootstrap": "^1.6.0",
         "react-bootstrap-drawer": "^1.0.0",
         "react-router-dom": "^5.2.0",
+        "react-slick": "^0.28.1",
         "styled-components": "^5.3.0"
     }
 }

@@ -1,8 +1,8 @@
 import { SelectInput } from "./style";
 
-const Select = ({ options, onSelect }) => (
+const Select = ({ options, onSelect, defaultValue }) => (
     <SelectInput onChange={(e) => onSelect(e.target.value)}>
-        <option defaultValue>Selecione uma categoria</option>
+        <option defaultValue>{defaultValue}</option>
         {options
             ? options.map((option) => (
                   <option key={option.id} value={option.id}>
