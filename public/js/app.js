@@ -7881,10 +7881,22 @@ var Header = function Header() {
           addArrowClickHandler: true
         }
       }],
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.Section, {
-        img: _media_slide1_jpeg__WEBPACK_IMPORTED_MODULE_3__.default
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.Section, {
-        img: _media_slide2_jpeg__WEBPACK_IMPORTED_MODULE_4__.default
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_0__.Section, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.BackImg, {
+          img: _media_slide1_jpeg__WEBPACK_IMPORTED_MODULE_3__.default
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.BackImg, {
+          img: _media_slide2_jpeg__WEBPACK_IMPORTED_MODULE_4__.default
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.BackImg, {
+          img: _media_slide1_jpeg__WEBPACK_IMPORTED_MODULE_3__.default
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_0__.Section, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.BackImg, {
+          img: _media_slide2_jpeg__WEBPACK_IMPORTED_MODULE_4__.default
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.BackImg, {
+          img: _media_slide1_jpeg__WEBPACK_IMPORTED_MODULE_3__.default
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.BackImg, {
+          img: _media_slide2_jpeg__WEBPACK_IMPORTED_MODULE_4__.default
+        })]
       })]
     })
   });
@@ -7905,13 +7917,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "HeaderStyle": () => (/* binding */ HeaderStyle),
 /* harmony export */   "Section": () => (/* binding */ Section),
+/* harmony export */   "BackImg": () => (/* binding */ BackImg),
 /* harmony export */   "NextBtn": () => (/* binding */ NextBtn),
 /* harmony export */   "PrevBtn": () => (/* binding */ PrevBtn)
 /* harmony export */ });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var react_slick__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-slick */ "./node_modules/react-slick/lib/index.js");
 /* harmony import */ var _media_back_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../media/back.jpg */ "./resources/media/back.jpg");
-var _templateObject, _templateObject2, _templateObject3, _templateObject4;
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5;
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -7919,11 +7932,12 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 var HeaderStyle = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    height: 80vh;\n    min-height: 400px;\n\n    background-position: bottom center;\n    background-size: cover;\n    overflow: hidden;\n    position: relative;\n"])));
-var Section = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    height: 80vh;\n    min-height: 400px;\n    width: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background-image: url(", ");\n    background-size: cover;\n"])), function (props) {
+var Section = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    height: 80vh;\n    min-height: 400px;\n    width: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n"])));
+var BackImg = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    width: 100%;\n    height: 100%;\n    background-image: url(", ");\n    background-size: cover;\n    background-position: center center;\n"])), function (props) {
   return props.img;
 });
-var NextBtn = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.button(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    position: absolute;\n    right: 10px;\n    top: 50%;\n    width: 50px;\n    height: 50px;\n    background-color: rgba(0, 0, 0, 0.5);\n    color: orange;\n    border: none;\n"])));
-var PrevBtn = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.button(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    position: absolute;\n    left: 10px;\n    top: 50%;\n    width: 50px;\n    height: 50px;\n    background-color: rgba(0, 0, 0, 0.5);\n    color: orange;\n    border: none;\n    z-index: 1;\n"])));
+var NextBtn = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.button(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    position: absolute;\n    right: 10px;\n    top: 50%;\n    width: 50px;\n    height: 50px;\n    background-color: rgba(0, 0, 0, 0.5);\n    color: orange;\n    border: none;\n"])));
+var PrevBtn = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.button(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    position: absolute;\n    left: 10px;\n    top: 50%;\n    width: 50px;\n    height: 50px;\n    background-color: rgba(0, 0, 0, 0.5);\n    color: orange;\n    border: none;\n    z-index: 1;\n"])));
 
 /***/ }),
 

@@ -19,8 +19,13 @@ export const Section = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+`;
+export const BackImg = styled.div`
+    width: 100%;
+    height: 100%;
     background-image: url(${(props) => props.img});
     background-size: cover;
+    background-position: center center;
 `;
 
 export const NextBtn = styled.button`

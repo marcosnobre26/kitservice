@@ -1,4 +1,4 @@
-import { HeaderStyle, Section, NextBtn, PrevBtn } from "./style";
+import { HeaderStyle, Section, NextBtn, PrevBtn, BackImg } from "./style";
 import Carousel, { arrowsPlugin } from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 
@@ -21,8 +21,16 @@ const Header = () => {
                     },
                 ]}
             >
-                <Section img={slide1}></Section>
-                <Section img={slide2}></Section>
+                <Section>
+                    <BackImg img={slide1} />
+                    <BackImg img={slide2} />
+                    <BackImg img={slide1} />
+                </Section>
+                <Section>
+                    <BackImg img={slide2} />
+                    <BackImg img={slide1} />
+                    <BackImg img={slide2} />
+                </Section>
             </Carousel>
         </HeaderStyle>
     );
