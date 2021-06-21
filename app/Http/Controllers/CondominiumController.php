@@ -7,6 +7,7 @@ use App\Models\KitNet;
 use App\Models\Condominium;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class CondominiumController extends Controller
 {
@@ -21,6 +22,9 @@ class CondominiumController extends Controller
     public function index()
     {
         $condominiums = Condominium::orderBy('name')->get();
+        foreach ($condominiums as $condominium) {
+            $condominium->imagens=DB::table('image_condominium')->where('condominium_id', $condominium->id)->get();
+        }
         return $condominiums->toJson();
     }
 
@@ -49,12 +53,18 @@ class CondominiumController extends Controller
     public function show($id)
     {
         $condominium = Condominium::with('kitnets')->find($id);
+        $condominium->imagens=DB::table('image_condominium')->where('condominium_id', $condominium->id)->get();
         return response()->json($condominium);
     }
 
     public function getForCondominium(Request $request, $id)
     {
         $kitnets = KitNet::where('condominium_id', $request->id)->get();
+
+        foreach ($kitnets as $kitnet) {
+            $kitnet->imagens=DB::table('image_kit_net')->where('kit_net_id', $kitnet->id)->get();
+        }
+
         return $kitnets->toJson();
     }
 

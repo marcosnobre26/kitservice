@@ -7,6 +7,8 @@ use App\Models\KitNet;
 use App\Models\Condominium;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class KitNetController extends Controller
 {
@@ -34,12 +36,9 @@ class KitNetController extends Controller
 
     public function store(Request $request)
     {
-
-        KitNet::create($request->all());
-
         $validatedData = $request->validate([
             'number' => 'required',
-            'image' => 'required',
+            'description' => 'required',
             'qtd_bedrooms' => 'required',
             'qtd_bathrooms' => 'required',
             'value' => 'required',
@@ -48,12 +47,28 @@ class KitNetController extends Controller
     
         $kitnet = KitNet::create([
             'number' => $validatedData['number'],
-            'image' => $validatedData['image'],
+            'description' => $validatedData['description'],
             'qtd_bedrooms' => $validatedData['qtd_bedrooms'],
             'qtd_bathrooms' => $validatedData['qtd_bathrooms'],
             'value' => $validatedData['value'],
             'condominium_id' => $validatedData['condominium_id'],
-            ]);
+        ]);
+
+        $files = $request->file('imagens');
+
+        if($request->hasFile('imagens'))
+        {
+            foreach ($files as $file) {
+
+                $name = $file->getClientOriginalName();
+
+                DB::table('image_kit_net')->insert([
+                    'image' => '/kitnets/'.$kitnet->id.'/'.$name,
+                    'kit_net_id' => $kitnet->id
+                ]);
+                $file->storeAs('public/kitnets/'.$kitnet->id, $name);
+            }
+        }
     
         return redirect()->route('kitnets.index')
             ->withStatus('Registro criado com sucesso.');
@@ -69,22 +84,89 @@ class KitNetController extends Controller
     public function update(Request $request, $id)
     {
         $item = KitNet::findOrFail($id);
-
-        Validator::make(
-            $request->all(),
-            $this->rules($request, $item->getKey())
-        )->validate();
-
+        
+        $this->uploadImages($id, $request->SavesImagens);
 
         $item->fill($request->all())->save();
+
+        $files = $request->file('imagens');
+
+        if($request->hasFile('imagens'))
+        {
+            foreach ($files as $file) {
+
+                $name = $file->getClientOriginalName();
+
+                DB::table('image_kit_net')->insert([
+                    'image_id' => $item->id,
+                    'image' => '/kitnets/'.$item->id.'/'.$name,
+                    'type' => '1',
+                    'kit_net_id' => $item->id
+
+                ]);
+                $file->storeAs('public/kitnets/'.$item->id, $name);
+            }
+        }
 
         return redirect()->route('kitnets.index')
             ->withStatus('Registro atualizado com sucesso.');
     }
 
+    protected function uploadImages($id, $imagens)
+    {
+        $imgs = DB::table('image_kit_net')
+        ->where('kit_net_id', '=', $id)
+        ->get();
+
+        foreach ($imgs as $img) {
+            $exists=$this->updateImages($img->id, $imagens,$id);
+
+            if($exists==false)
+            {
+                Storage::disk('public')->delete($img->image);
+                DB::table('image_kit_net')->where('id', $img->id)->delete();
+            }
+        }
+
+    }
+
+    protected function updateImages($id, $imagens,$idKit)
+    {
+        $cont=0;
+        if($imagens==null)
+        {
+            $this->deleteAll($idKit);
+        }
+        else{
+            foreach ($imagens as $image) {
+                if($image==$id)
+                {
+                    $cont=$cont+1;
+                }
+            }
+    
+            if($cont==0)
+            {
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        
+    }
+
+    protected function deleteAll($id)
+    {
+        Storage::deleteDirectory('/public/kitnets/'.$id);
+        DB::table('image_kit_net')->where('kit_net_id', $id)->delete();
+    }
+
     public function destroy($id)
     {
         $item = KitNet::findOrFail($id);
+
+        $this->deleteAll($id);
 
         try {
             $item->delete();
@@ -99,8 +181,12 @@ class KitNetController extends Controller
     public function edit($id)
     {
         $item = KitNet::findOrFail($id);
-        return view('kitnets.edit', compact('item'));
+        $condominiums = Condominium::orderBy('name')->get();
+        $imagens = DB::table('image_kit_net')->where('kit_net_id','=', $id)->get();
+        return view('kitnets.edit', compact('item','condominiums','imagens'));
     }
+
+    
 
     /*private function rules(Request $request, $primaryKey = null, bool $changeMessages = false)
     {

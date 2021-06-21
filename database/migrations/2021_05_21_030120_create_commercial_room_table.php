@@ -16,8 +16,8 @@ class CreateCommercialRoomTable extends Migration
         Schema::create('commercial_room', function (Blueprint $table) {
             $table->id();
             $table->integer('number');
-            $table->string('image');
             $table->string('qtd_bedrooms');
+            $table->longText('description');
             $table->decimal('value', 10, 2);
             $table->timestamps();
         });

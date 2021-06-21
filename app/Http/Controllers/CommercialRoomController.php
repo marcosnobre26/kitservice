@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\CommercialRoom;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class CommercialRoomController extends Controller
 {
@@ -15,13 +16,19 @@ class CommercialRoomController extends Controller
 
     public function index()
     {
-        $commercialroom = CommercialRoom::orderBy('number')->get();
-        return $commercialroom->toJson();
+        $commercialrooms = CommercialRoom::orderBy('number')->get();
+        foreach ($commercialrooms as $commercialroom) {
+            $commercialroom->imagens=DB::table('image_commercial_room')->where('commercial_room_id', $commercialroom->id)->get();
+        }
+        return $commercialrooms->toJson();
     }
 
     public function get($id)
     {
-        $commercialroom = CommercialRoom::find($id)->get();
+        $commercialroom = CommercialRoom::find($id)->first();
+
+        $commercialroom->imagens=DB::table('image_commercial_room')->where('commercial_room_id', $commercialroom->id)->get();
+
         return $commercialroom->toJson();
     }
 
@@ -55,6 +62,8 @@ class CommercialRoomController extends Controller
     public function show($id)
     {
         $commercialroom = CommercialRoom::find($id);
+        $commercialroom->imagens=DB::table('image_commercial_room')->where('commercial_room_id', $commercialroom->id)->get();
+
         return $commercialroom->toJson();
     }
 

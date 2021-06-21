@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\KitNet;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class KitNetController extends Controller
 {
@@ -20,6 +21,11 @@ class KitNetController extends Controller
     public function index()
     {
         $kitnets = KitNet::orderBy('number')->get();
+
+        foreach ($kitnets as $kitnet) {
+            $kitnet->imagens=DB::table('image_kit_net')->where('kit_net_id', $kitnet->id)->get();
+        }
+
         return $kitnets->toJson();
     }
 
@@ -58,6 +64,8 @@ class KitNetController extends Controller
     public function show($id)
     {
         $kitnet = KitNet::find($id);
+        $kitnet->imagens=DB::table('image_kit_net')->where('kit_net_id', $kitnet->id)->get();
+        
         return $kitnet->toJson();
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCondominiumsTable extends Migration
+class CreateImageKitNetTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateCondominiumsTable extends Migration
      */
     public function up()
     {
-        Schema::create('condominiums', function (Blueprint $table) {
+        Schema::create('image_kit_net', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('address');
-            $table->longText('description');
+            $table->string('image');
+            $table->bigInteger('kit_net_id')->unsigned();
+            $table->foreign('kit_net_id')->references('id')->on('kit_nets');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateCondominiumsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('condominiums');
+        Schema::dropIfExists('image_kit_net');
     }
 }

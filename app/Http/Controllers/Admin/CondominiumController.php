@@ -7,6 +7,8 @@ use App\Models\KitNet;
 use App\Models\Condominium;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class CondominiumController extends Controller
 {
@@ -33,15 +35,33 @@ class CondominiumController extends Controller
       {
         $validatedData = $request->validate([
           'name' => 'required',
-          'image' => 'required',
+          'description' => 'required',
           'address' => 'required',
         ]);
 
         $condominium = Condominium::create([
           'name' => $validatedData['name'],
-          'image' => $validatedData['image'],
+          'description' => $validatedData['description'],
           'address' => $validatedData['address'],
         ]);
+
+        $files = $request->file('imagens');
+
+        if($request->hasFile('imagens'))
+        {
+            foreach ($files as $file) {
+
+                $name = $file->getClientOriginalName();
+
+                DB::table('image_condominium')->insert([
+                    //'image_id' => $kitnet->id,
+                    'image' => '/condominium/'.$condominium->id.'/'.$name,
+                    //'type' => '1',
+                    'condominium_id' => $condominium->id
+                ]);
+                $file->storeAs('public/condominium/'.$condominium->id, $name);
+            }
+        }
 
         return redirect()->route('condominiums.index')
             ->withStatus('Registro criado com sucesso.');
@@ -56,19 +76,39 @@ class CondominiumController extends Controller
     public function edit($id)
     {
         $item = Condominium::findOrFail($id);
-        return view('condominiums.edit', compact('item'));
+        $imagens = DB::table('image_condominium')->where('condominium_id','=', $id)->get();
+        return view('condominiums.edit', compact('item','imagens'));
     }
 
     public function update(Request $request, $id)
     {
         $item = Condominium::findOrFail($id);
-
-        Validator::make(
-            $request->all(),
-            $this->rules($request, $item->getKey())
-        )->validate();
+        
+        $this->uploadImages($id, $request->SavesImagens);
 
         $item->fill($request->all())->save();
+
+        $files = $request->file('imagens');
+
+        /*Validator::make(
+            $request->all(),
+            $this->rules($request, $item->getKey())
+        )->validate();*/
+
+        if($request->hasFile('imagens'))
+        {
+            foreach ($files as $file) {
+
+                $name = $file->getClientOriginalName();
+
+                DB::table('image_condominium')->insert([
+                    'image' => '/condominium/'.$item->id.'/'.$name,
+                    'condominium_id' => $item->id
+
+                ]);
+                $file->storeAs('public/condominium/'.$item->id, $name);
+            }
+        }
 
         return redirect()->route('condominiums.index')
             ->withStatus('Registro atualizado com sucesso.');
@@ -77,7 +117,7 @@ class CondominiumController extends Controller
     public function destroy($id)
     {
         $item = Condominium::findOrFail($id);
-
+        $this->deleteAll($id);
         try {
             $item->delete();
 
@@ -89,11 +129,66 @@ class CondominiumController extends Controller
         }
     }
 
+    protected function deleteAll($id)
+    {
+        Storage::deleteDirectory('/public/condominium/'.$id);
+        DB::table('image_condominium')->where('condominium_id', $id)->delete();
+    }
+
+    /*protected function saveDocument($id, $file, $oficial_name)
+    {
+        Storage::disk('local')->putFileAs('/condominium/'.$id, $file,$oficial_name);
+    }*/
+
+    protected function uploadImages($id, $imagens)
+    {
+        $imgs = DB::table('image_condominium')
+        ->where('condominium_id', '=', $id)
+        ->get();
+
+        foreach ($imgs as $img) {
+            $exists=$this->updateImages($img->id, $imagens,$id);
+
+            if($exists==false)
+            {
+                Storage::disk('public')->delete($img->image);
+                DB::table('image_condominium')->where('id', $img->id)->delete();
+            }
+        }
+
+    }
+
+    protected function updateImages($id, $imagens,$idKit)
+    {
+        $cont=0;
+        if($imagens==null)
+        {
+            $this->deleteAll($idKit);
+        }
+        else{
+            foreach ($imagens as $image) {
+                if($image==$id)
+                {
+                    $cont=$cont+1;
+                }
+            }
+    
+            if($cont==0)
+            {
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        
+    }
+
     private function rules(Request $request, $primaryKey = null, bool $changeMessages = false)
     {
         $rules = [
             'name' => ['required'],
-            'image' => ['required'],
+            'description' => ['required'],
             'address' => ['required']
         ];
 

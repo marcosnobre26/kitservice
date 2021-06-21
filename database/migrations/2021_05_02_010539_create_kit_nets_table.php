@@ -16,10 +16,10 @@ class CreateKitNetsTable extends Migration
         Schema::create('kit_nets', function (Blueprint $table) {
             $table->id();
             $table->integer('number');
-            $table->string('image');
             $table->string('qtd_bedrooms');
             $table->string('qtd_bathrooms');
             $table->decimal('value', 10, 2);
+            $table->longText('description');
             $table->bigInteger('condominium_id')->unsigned();
             $table->foreign('condominium_id')->references('id')->on('condominiums');
             $table->timestamps();

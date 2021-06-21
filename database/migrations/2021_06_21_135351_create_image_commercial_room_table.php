@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCondominiumsTable extends Migration
+class CreateImageCommercialRoomTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateCondominiumsTable extends Migration
      */
     public function up()
     {
-        Schema::create('condominiums', function (Blueprint $table) {
+        Schema::create('image_commercial_room', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('address');
-            $table->longText('description');
+            $table->string('image');
+            $table->bigInteger('commercial_room_id')->unsigned();
+            $table->foreign('commercial_room_id')->references('id')->on('commercial_room');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateCondominiumsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('condominiums');
+        Schema::dropIfExists('image_commercial_room');
     }
 }

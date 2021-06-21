@@ -9,7 +9,8 @@ class CommercialRoom extends Model//mesma coisa dos atibutos de kitnets com apen
 {
     use HasFactory;
     
-    protected $fillable = ['number', 'image', 'qtd_bedrooms','value', 'address'];
+    protected $fillable = ['number', 'image', 'qtd_bedrooms',
+    'value', 'address','description'];
 
     protected $table = 'commercial_room';
 }

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\CommercialRoom;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class ComercialRoomController extends Controller
 {
@@ -34,7 +36,7 @@ class ComercialRoomController extends Controller
     {
         $validatedData = $request->validate([
             'number' => 'required',
-            'image' => 'required',
+            'description' => 'required',
             'qtd_bedrooms' => 'required',
             'address' => 'required',
             'value' => 'required',
@@ -42,11 +44,27 @@ class ComercialRoomController extends Controller
     
         $commercialroom = CommercialRoom::create([
             'number' => $validatedData['number'],
-            'image' => $validatedData['image'],
+            'description' => $validatedData['description'],
             'qtd_bedrooms' => $validatedData['qtd_bedrooms'],
             'address' => $validatedData['address'],
             'value' => $validatedData['value'],
             ]);
+
+        $files = $request->file('imagens');
+
+        if($request->hasFile('imagens'))
+        {
+            foreach ($files as $file) {
+
+                $name = $file->getClientOriginalName();
+
+                DB::table('image_commercial_room')->insert([
+                    'image' => '/commercialroom/'.$commercialroom->id.'/'.$name,
+                    'commercial_room_id' => $commercialroom->id
+                ]);
+                $file->storeAs('public/commercialroom/'.$commercialroom->id, $name);
+            }
+        }
     
         return redirect()->route('comercialrooms.index')
             ->withStatus('Registro criado com sucesso.');
@@ -66,17 +84,41 @@ class ComercialRoomController extends Controller
         /*Validator::make(
             $request->all(),
             $this->rules($request, $item->getKey())
-        )->validate();*/
+        )->validate();
         $validatedData = $request->validate([
             'number' => 'required',
             'image' => 'required',
             'qtd_bedrooms' => 'required',
             'address' => 'required',
             'value' => 'required',
-            ]);
+            ]);*/
 
+
+        $this->uploadImages($id, $request->SavesImagens);
 
         $item->fill($request->all())->save();
+
+        $files = $request->file('imagens');
+
+        /*Validator::make(
+            $request->all(),
+            $this->rules($request, $item->getKey())
+        )->validate();*/
+
+        if($request->hasFile('imagens'))
+        {
+            foreach ($files as $file) {
+
+                $name = $file->getClientOriginalName();
+
+                DB::table('image_commercial_room')->insert([
+                    'image' => '/commercialroom/'.$item->id.'/'.$name,
+                    'commercial_room_id' => $item->id
+
+                ]);
+                $file->storeAs('public/commercialroom/'.$item->id, $name);
+            }
+        }
 
         return redirect()->route('comercialrooms.index')
             ->withStatus('Registro atualizado com sucesso.');
@@ -99,7 +141,58 @@ class ComercialRoomController extends Controller
     public function edit($id)
     {
         $item = CommercialRoom::findOrFail($id);
-        return view('comercialrooms.edit', compact('item'));
+        $imagens = DB::table('image_commercial_room')->where('commercial_room_id','=', $id)->get();
+        return view('comercialrooms.edit', compact('item','imagens'));
+    }
+
+    protected function deleteAll($id)
+    {
+        Storage::deleteDirectory('/public/commercialroom/'.$id);
+        DB::table('image_commercial_room')->where('commercial_room_id', $id)->delete();
+    }
+
+    protected function uploadImages($id, $imagens)
+    {
+        $imgs = DB::table('image_commercial_room')
+        ->where('commercial_room_id', '=', $id)
+        ->get();
+
+        foreach ($imgs as $img) {
+            $exists=$this->updateImages($img->id, $imagens,$id);
+
+            if($exists==false)
+            {
+                Storage::disk('public')->delete($img->image);
+                DB::table('image_commercial_room')->where('id', $img->id)->delete();
+            }
+        }
+
+    }
+
+    protected function updateImages($id, $imagens,$idComercialRoom)
+    {
+        $cont=0;
+        if($imagens==null)
+        {
+            $this->deleteAll($idComercialRoom);
+        }
+        else{
+            foreach ($imagens as $image) {
+                if($image==$id)
+                {
+                    $cont=$cont+1;
+                }
+            }
+    
+            if($cont==0)
+            {
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        
     }
 
     /*private function rules(Request $request, $primaryKey = null, bool $changeMessages = false)
