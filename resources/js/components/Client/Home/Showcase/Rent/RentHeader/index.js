@@ -15,6 +15,7 @@ const RentHeader = ({ images }) => (
                         addArrowClickHandler: true,
                     },
                 },
+                "centered",
             ]}
         >
             {images &&

@@ -8322,7 +8322,7 @@ var RentHeader = function RentHeader(_ref) {
           arrowRightDisabled: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {}),
           addArrowClickHandler: true
         }
-      }],
+      }, "centered"],
       children: images && images.map(function (image, index) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.HeaderImg, {
           src: "/storage" + image.image
