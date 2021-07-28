@@ -1,9 +1,9 @@
 import { HeaderImg, HeaderStyle } from "./style";
 import ap from "../../../../../../../media/ap.jpg";
 
-const RentHeader = () => (
+const RentHeader = ({ images }) => (
     <HeaderStyle>
-        <HeaderImg src={ap} />
+        <HeaderImg src={"/storage/" + images[0].image} />
     </HeaderStyle>
 );
 

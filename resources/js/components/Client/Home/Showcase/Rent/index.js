@@ -5,18 +5,18 @@ import RentTitle from "./RentTitle";
 import { RentInfoContainer, RentStyle } from "./style";
 import { useHistory } from "react-router-dom";
 
-const Rent = ({ title, index, address, id }) => {
+const Rent = ({ title, index, address, id, description, images }) => {
     const history = useHistory();
     const condoRedirect = () => {
         history.push(`/condo/${id}`);
     };
     return (
         <RentStyle id={index ? index : ""} onClick={condoRedirect}>
-            <RentHeader />
+            <RentHeader images={images} />
             <RentInfoContainer>
                 <RentTitle title={title} />
                 <RentAddress address={address} />
-                <RentInfo />
+                <RentInfo description={description} />
             </RentInfoContainer>
         </RentStyle>
     );

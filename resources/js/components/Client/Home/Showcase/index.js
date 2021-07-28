@@ -42,6 +42,7 @@ const Showcase = ({ condos }) => {
     //     ref.current.addEventListener("mousedown", mouseDown);
     //     ref.current.addEventListener("mouseup", mouseUp);
     // });
+    console.log(condos);
     return (
         <ShowcaseStyle>
             <Prev onClick={() => scroll("prev")}>{"<"}</Prev>
@@ -52,7 +53,10 @@ const Showcase = ({ condos }) => {
                               <Rent
                                   key={condo.id}
                                   title={condo.name}
+                                  address={condo.address}
+                                  description={condo.description}
                                   id={condo.id}
+                                  images={condo.imagens}
                               />
                           );
                       })

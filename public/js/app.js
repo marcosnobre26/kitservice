@@ -7881,22 +7881,14 @@ var Header = function Header() {
           addArrowClickHandler: true
         }
       }],
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_0__.Section, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.BackImg, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.Section, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.BackImg, {
           img: _media_slide1_jpeg__WEBPACK_IMPORTED_MODULE_3__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.BackImg, {
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.Section, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.BackImg, {
           img: _media_slide2_jpeg__WEBPACK_IMPORTED_MODULE_4__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.BackImg, {
-          img: _media_slide1_jpeg__WEBPACK_IMPORTED_MODULE_3__.default
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_0__.Section, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.BackImg, {
-          img: _media_slide2_jpeg__WEBPACK_IMPORTED_MODULE_4__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.BackImg, {
-          img: _media_slide1_jpeg__WEBPACK_IMPORTED_MODULE_3__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.BackImg, {
-          img: _media_slide2_jpeg__WEBPACK_IMPORTED_MODULE_4__.default
-        })]
+        })
       })]
     })
   });
@@ -8309,10 +8301,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var RentHeader = function RentHeader() {
+var RentHeader = function RentHeader(_ref) {
+  var images = _ref.images;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.HeaderStyle, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.HeaderImg, {
-      src: _media_ap_jpg__WEBPACK_IMPORTED_MODULE_1__.default
+      src: "/storage/" + images[0].image
     })
   });
 };
@@ -8360,9 +8353,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var RentInfo = function RentInfo() {
+var RentInfo = function RentInfo(_ref) {
+  var description = _ref.description;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.RentInfoStyle, {
-    children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer semper nisl non velit condimentum, quis mollis quam gravida. Aliquam pretium, leo sit amet iaculis euismod"
+    children: description
   });
 };
 
@@ -8476,7 +8470,9 @@ var Rent = function Rent(_ref) {
   var title = _ref.title,
       index = _ref.index,
       address = _ref.address,
-      id = _ref.id;
+      id = _ref.id,
+      description = _ref.description,
+      images = _ref.images;
   var history = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useHistory)();
 
   var condoRedirect = function condoRedirect() {
@@ -8486,12 +8482,16 @@ var Rent = function Rent(_ref) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_4__.RentStyle, {
     id: index ? index : "",
     onClick: condoRedirect,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_RentHeader__WEBPACK_IMPORTED_MODULE_1__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_4__.RentInfoContainer, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_RentHeader__WEBPACK_IMPORTED_MODULE_1__.default, {
+      images: images
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_4__.RentInfoContainer, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_RentTitle__WEBPACK_IMPORTED_MODULE_3__.default, {
         title: title
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_RentAddress__WEBPACK_IMPORTED_MODULE_0__.default, {
         address: address
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_RentInfo__WEBPACK_IMPORTED_MODULE_2__.default, {})]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_RentInfo__WEBPACK_IMPORTED_MODULE_2__.default, {
+        description: description
+      })]
     })]
   });
 };
@@ -8608,6 +8608,7 @@ var Showcase = function Showcase(_ref) {
   // });
 
 
+  console.log(condos);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_3__.ShowcaseStyle, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_style__WEBPACK_IMPORTED_MODULE_3__.Prev, {
       onClick: function onClick() {
@@ -8619,7 +8620,10 @@ var Showcase = function Showcase(_ref) {
       children: condos ? condos.map(function (condo, index) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Rent__WEBPACK_IMPORTED_MODULE_2__.default, {
           title: condo.name,
-          id: condo.id
+          address: condo.address,
+          description: condo.description,
+          id: condo.id,
+          images: condo.imagens
         }, condo.id);
       }) : null
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_style__WEBPACK_IMPORTED_MODULE_3__.Next, {
