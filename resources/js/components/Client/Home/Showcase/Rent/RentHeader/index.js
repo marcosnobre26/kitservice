@@ -1,6 +1,6 @@
 import { HeaderImg, HeaderStyle, PrevBtn, NextBtn } from "./style";
 import Carousel, { arrowsPlugin } from "@brainhubeu/react-carousel";
-import Header from "../../../Header";
+
 const RentHeader = ({ images }) => (
     <HeaderStyle>
         <Carousel

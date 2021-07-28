@@ -8297,9 +8297,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style */ "./resources/js/components/Client/Home/Showcase/Rent/RentHeader/style.js");
 /* harmony import */ var _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @brainhubeu/react-carousel */ "./node_modules/@brainhubeu/react-carousel/lib/react-carousel.js");
 /* harmony import */ var _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Header */ "./resources/js/components/Client/Home/Header/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -8307,24 +8305,24 @@ __webpack_require__.r(__webpack_exports__);
 
 var RentHeader = function RentHeader(_ref) {
   var images = _ref.images;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.HeaderStyle, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)((_brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_1___default()), {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.HeaderStyle, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)((_brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_1___default()), {
       plugins: [{
         resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_1__.arrowsPlugin,
         options: {
-          arrowLeft: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.PrevBtn, {
+          arrowLeft: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.PrevBtn, {
             children: "<"
           }),
-          arrowLeftDisabled: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {}),
-          arrowRight: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.NextBtn, {
+          arrowLeftDisabled: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {}),
+          arrowRight: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.NextBtn, {
             children: ">"
           }),
-          arrowRightDisabled: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {}),
+          arrowRightDisabled: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {}),
           addArrowClickHandler: true
         }
       }, "centered"],
       children: images && images.map(function (image, index) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.HeaderImg, {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.HeaderImg, {
           src: "/storage" + image.image
         }, index);
       })
@@ -8546,7 +8544,7 @@ var _templateObject, _templateObject2;
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
-var RentStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    border-radius: 10px;\n    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);\n    overflow: hidden;\n    width: calc(100% / 3 - 20px);\n    margin-right: 30px;\n    display: inline-block;\n    :last-child {\n        margin-right: 0;\n    }\n"])));
+var RentStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    border-radius: 10px;\n    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);\n    overflow: hidden;\n    width: calc(100% / 3 - 20px);\n    margin-right: 30px;\n    display: inline-block;\n    height: 450px;\n    :last-child {\n        margin-right: 0;\n    }\n"])));
 var RentInfoContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    padding: 20px 15px;\n    white-space: normal;\n"])));
 
 /***/ }),
