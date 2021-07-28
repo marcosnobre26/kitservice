@@ -3,7 +3,7 @@ import ap from "../../../../../../../media/ap.jpg";
 
 const RentHeader = ({ images }) => (
     <HeaderStyle>
-        <HeaderImg src={"/storage/" + images[0].image} />
+        <HeaderImg src={"/storage" + images[0].image} />
     </HeaderStyle>
 );
 

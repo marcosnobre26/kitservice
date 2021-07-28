@@ -8305,7 +8305,7 @@ var RentHeader = function RentHeader(_ref) {
   var images = _ref.images;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.HeaderStyle, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.HeaderImg, {
-      src: "/storage/" + images[0].image
+      src: "/storage" + images[0].image
     })
   });
 };
