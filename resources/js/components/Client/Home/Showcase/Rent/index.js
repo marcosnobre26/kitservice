@@ -11,10 +11,10 @@ const Rent = ({ title, index, address, id, description, images }) => {
         history.push(`/condo/${id}`);
     };
     return (
-        <RentStyle id={index ? index : ""} onClick={condoRedirect}>
+        <RentStyle id={index ? index : ""}>
             <RentHeader images={images} />
             <RentInfoContainer>
-                <RentTitle title={title} />
+                <RentTitle title={title} onClick={condoRedirect} />
                 <RentAddress address={address} />
                 <RentInfo description={description} />
             </RentInfoContainer>

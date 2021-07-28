@@ -5,6 +5,7 @@ export const TitleStyled = styled.div`
     margin: 0;
     font-size: 20px;
     font-weight: bold;
+    cursor: pointer;
 `;
 
 export const Line = styled.hr`

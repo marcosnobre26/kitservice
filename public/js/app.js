@@ -8295,17 +8295,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style */ "./resources/js/components/Client/Home/Showcase/Rent/RentHeader/style.js");
-/* harmony import */ var _media_ap_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../media/ap.jpg */ "./resources/media/ap.jpg");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @brainhubeu/react-carousel */ "./node_modules/@brainhubeu/react-carousel/lib/react-carousel.js");
+/* harmony import */ var _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Header */ "./resources/js/components/Client/Home/Header/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
 
 
 
 
 var RentHeader = function RentHeader(_ref) {
   var images = _ref.images;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.HeaderStyle, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.HeaderImg, {
-      src: "/storage" + images[0].image
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.HeaderStyle, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)((_brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_1___default()), {
+      plugins: [{
+        resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_1__.arrowsPlugin,
+        options: {
+          arrowLeft: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.PrevBtn, {
+            children: "<"
+          }),
+          arrowLeftDisabled: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {}),
+          arrowRight: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.NextBtn, {
+            children: ">"
+          }),
+          arrowRightDisabled: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {}),
+          addArrowClickHandler: true
+        }
+      }],
+      children: images && images.map(function (image, index) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.HeaderImg, {
+          src: "/storage" + image.image
+        }, index);
+      })
     })
   });
 };
@@ -8324,16 +8346,20 @@ var RentHeader = function RentHeader(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "HeaderStyle": () => (/* binding */ HeaderStyle),
-/* harmony export */   "HeaderImg": () => (/* binding */ HeaderImg)
+/* harmony export */   "HeaderImg": () => (/* binding */ HeaderImg),
+/* harmony export */   "NextBtn": () => (/* binding */ NextBtn),
+/* harmony export */   "PrevBtn": () => (/* binding */ PrevBtn)
 /* harmony export */ });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-var _templateObject, _templateObject2;
+var _templateObject, _templateObject2, _templateObject3, _templateObject4;
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
-var HeaderStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    height: 200px;\n    background: gray;\n    overflow: hidden;\n"])));
+var HeaderStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    height: 200px;\n    background: gray;\n    overflow: hidden;\n    position: relative;\n"])));
 var HeaderImg = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.img(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    width: 100%;\n    height: auto;\n"])));
+var NextBtn = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.button(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    position: absolute;\n    right: 10px;\n    top: 50%;\n    width: 50px;\n    height: 50px;\n    background-color: rgba(0, 0, 0, 0.5);\n    color: orange;\n    border: none;\n"])));
+var PrevBtn = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.button(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    position: absolute;\n    left: 10px;\n    top: 50%;\n    width: 50px;\n    height: 50px;\n    background-color: rgba(0, 0, 0, 0.5);\n    color: orange;\n    border: none;\n    z-index: 1;\n"])));
 
 /***/ }),
 
@@ -8404,9 +8430,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var RentTitle = function RentTitle(_ref) {
-  var title = _ref.title;
+  var title = _ref.title,
+      onClick = _ref.onClick;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.TitleStyled, {
+      onClick: onClick,
       children: title ? title.toUpperCase() : "ALUGUE"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.Line, {})]
   });
@@ -8434,7 +8462,7 @@ var _templateObject, _templateObject2;
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
-var TitleStyled = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    color: #f2c94c;\n    margin: 0;\n    font-size: 20px;\n    font-weight: bold;\n"])));
+var TitleStyled = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    color: #f2c94c;\n    margin: 0;\n    font-size: 20px;\n    font-weight: bold;\n    cursor: pointer;\n"])));
 var Line = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.hr(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    margin: 0;\n    border: none;\n    border-bottom: 1px solid #f2c94c;\n"])));
 
 /***/ }),
@@ -8481,12 +8509,12 @@ var Rent = function Rent(_ref) {
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_4__.RentStyle, {
     id: index ? index : "",
-    onClick: condoRedirect,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_RentHeader__WEBPACK_IMPORTED_MODULE_1__.default, {
       images: images
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_4__.RentInfoContainer, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_RentTitle__WEBPACK_IMPORTED_MODULE_3__.default, {
-        title: title
+        title: title,
+        onClick: condoRedirect
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_RentAddress__WEBPACK_IMPORTED_MODULE_0__.default, {
         address: address
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_RentInfo__WEBPACK_IMPORTED_MODULE_2__.default, {
@@ -8518,7 +8546,7 @@ var _templateObject, _templateObject2;
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
-var RentStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    border-radius: 10px;\n    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);\n    overflow: hidden;\n    width: calc(100% / 3 - 20px);\n    margin-right: 30px;\n    display: inline-block;\n    :last-child {\n        margin-right: 0;\n    }\n    cursor: pointer;\n"])));
+var RentStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    border-radius: 10px;\n    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);\n    overflow: hidden;\n    width: calc(100% / 3 - 20px);\n    margin-right: 30px;\n    display: inline-block;\n    :last-child {\n        margin-right: 0;\n    }\n"])));
 var RentInfoContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    padding: 20px 15px;\n    white-space: normal;\n"])));
 
 /***/ }),

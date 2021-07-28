@@ -10,7 +10,6 @@ export const RentStyle = styled.div`
     :last-child {
         margin-right: 0;
     }
-    cursor: pointer;
 `;
 
 export const RentInfoContainer = styled.div`
