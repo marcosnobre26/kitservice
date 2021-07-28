@@ -20,9 +20,19 @@ class CondominiumController extends Controller
         $this->middleware('permission:banks_delete', ['only' => ['destroy']]);*/
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $data = Condominium::orderBy('name')->paginate(5);
+        $data = Condominium::orderBy('name')
+        ->when($request->has('address'), function($query) use($request){
+            return $query->where('address', 'like', '%' . $request->address . '%');
+        })
+        ->when($request->has('name'), function($query) use($request){
+            return $query->where('name', 'like', '%' . $request->name . '%');
+        })
+        //->where('address', 'like', '%' . $request->address . '%')
+        ->paginate(5);
+
+        
         return view('condominiums.index', compact('data'));
     }
 

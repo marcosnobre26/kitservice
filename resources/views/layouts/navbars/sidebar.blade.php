@@ -7,23 +7,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-            <a class="nav-link" href="{{ route('kitnets.index') }}">KitNets <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{{ route('kitnets.index') }}"><i class="fas fa-house-user"></i>KitNets</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{ route('condominiums.index') }}">Condominios</a>
+        
+        <li class="nav-item active">
+          
+          
+          <a class="nav-link" href="{{ route('condominiums.index') }}"><i class="fas fa-building"></i>Condominios</a>
+        
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{ route('comercialrooms.index') }}">Salas Comerciais</a>
+      
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ route('comercialrooms.index') }}"><i class="fas fa-business-time"></i>Salas Comerciais</a>
         </li>
-
-        <!--@can('condominiums_view')
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ route('condominiums.index') }}">
-                    <i class="fas fa-clinic-medical"></i>
-                    <p>KitNets</p>
-                </a>
-            </li>
-        @endcan-->
         
       </ul>
     </div>

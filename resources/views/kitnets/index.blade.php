@@ -7,7 +7,7 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-8">
-                        <h4 class="card-title">KitNets</h4>
+                        <h4 class="card-title"><i class="fas fa-house-user"></i> KitNets</h4>
                     </div>
                     <div class="col-4 text-right">
                         <a href="{{ route('kitnets.create') }}" class="btn btn-sm btn-primary">Adicionar Novo</a>
@@ -17,6 +17,21 @@
             <div class="card-body">
                 @include('alerts.success')
                 @include('alerts.error')
+
+                {!!Form::open()->fill(request()->all())->get()!!} 
+                    <div class="row">
+                        <div class="col-md-12">
+                            {!!Form::select('condominium_id', 'Condominios',)
+                            ->options($condominiuns->prepend('Selecione',''),'name')
+                            ->required()
+                            !!}
+                            <button type="submit" class="btn btn-filtro btn-sm btn-primary">Filtrar
+                                <i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+
+                    </div>
+                {!!Form::close()!!}
 
                 <div class="">
                     <table class="table tablesorter table-striped" id="">

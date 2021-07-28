@@ -38,8 +38,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+    
+    <script src="jquery.maskMoney.js" type="text/javascript"></script>
     
     <script src="{{ asset('js/app.js') }}"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="hhttps://cdnjs.com/libraries/jquery.mask"></script>
 </head>
 
 <body class="white-content {{ $class ?? '' }}">

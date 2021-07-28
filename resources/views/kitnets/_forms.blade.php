@@ -7,7 +7,7 @@
 
     <div class="col-md-6">
         {!!Form::text('value', 'Preço')
-        ->attrs(['maxlength' => 60])
+        ->attrs(['maxlength' => 60, 'class'=>'money'])
         !!}
     </div>
 
@@ -17,13 +17,13 @@
         !!}
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-3">
         {!!Form::text('qtd_bathrooms', 'Numero de Banheiros')
         ->attrs(['maxlength' => 60])
         !!}
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-3">
         {!!Form::select('condominium_id', 'Condominio')
         ->options($condominiums->prepend('Selecione',''),'name')
         ->required()
@@ -118,38 +118,19 @@
     </div>
 </div>
 
-<!--@push('js')
+@push('js')
 <script>
-$(document).ready(function() {
-    $('#inp-affiliated_id').select2({
-        minimumInputLength: 3,
-        language: "pt-BR",
-        placeholder: 'Busca filiado por nome e CPF',
-        ajax: {
-            cache: true,
-            url: getUrl() + '/api/v1/public/pacients',
-            dataType: 'json',
-            data: function(params) {
-                var query = {
-                    search: params.term
-                }
-                return query;
-            },
-            processResults: function(data) {
-                var results = [];
-                $.each(data.data, function(i, v) {
-                    var o = {};
-                    o.id = v.id;
-                    o.text = v.name +' - '+ v.nif;
-                    o.value = v.id;
-                    results.push(o);
-                })
-                return {
-                    results: results
-                };
-            }
-        }
+
+    $(document).ready(function(){
+        $('.date').mask('00/00/0000');
+        $('.time').mask('00:00:00');
+        $('.cep').mask('00000-000');
+        $('.phone').mask('(00) 00000-0000');
+        $('.cpf').mask('000.000.000-00');
+        $(".money").mask("0.000.000,00", {
+           reverse: true,
+        });
     });
-});
+
 </script>
-@endpush-->
+@endpush

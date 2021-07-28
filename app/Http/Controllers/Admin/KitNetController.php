@@ -20,10 +20,24 @@ class KitNetController extends Controller
         $this->middleware('permission:banks_delete', ['only' => ['destroy']]);*/
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $data = KitNet::orderBy('number')->with('condominium')->paginate(5);
-        return view('kitnets.index', compact('data'));
+        //dd($request);
+        $condominiuns = Condominium::orderBy('name')->get();
+        $data = KitNet::orderBy('number')
+        ->with('condominium')
+        ->when($request->has('condominium_id'), function ($query) use ($request) {
+            return $query->where('kit_nets.condominium_id',$request->condominium_id);
+        })
+        ->paginate(5);
+
+        foreach ($data as $money => $value) {
+            $numero = $value->value;
+            $moeda=number_format($numero, 2, ',', '.');
+            $value->value=$moeda;
+        }
+        
+        return view('kitnets.index', compact('data','condominiuns'));
     }
 
     public function create()
@@ -44,13 +58,16 @@ class KitNetController extends Controller
             'value' => 'required',
             'condominium_id' => 'required',
             ]);
+
+        $moeda=str_replace(",", ".", $request->value);
+        $request['value']=$moeda.'';
     
         $kitnet = KitNet::create([
             'number' => $validatedData['number'],
             'description' => $validatedData['description'],
             'qtd_bedrooms' => $validatedData['qtd_bedrooms'],
             'qtd_bathrooms' => $validatedData['qtd_bathrooms'],
-            'value' => $validatedData['value'],
+            'value' => $request->value,
             'condominium_id' => $validatedData['condominium_id'],
         ]);
 

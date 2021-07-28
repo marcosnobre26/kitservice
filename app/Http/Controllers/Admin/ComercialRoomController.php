@@ -19,9 +19,20 @@ class ComercialRoomController extends Controller
         $this->middleware('permission:banks_delete', ['only' => ['destroy']]);*/
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $data = CommercialRoom::orderBy('number')->paginate(5);
+        $data = CommercialRoom::orderBy('number')
+        ->when($request->has('address'), function($query) use($request){
+            return $query->where('address', 'like', '%' . $request->address . '%');
+        })
+        ->paginate(5);
+
+        foreach ($data as $money => $value) {
+            $numero = $value->value;
+            $moeda=number_format($numero, 2, ',', '.');
+            $value->value=$moeda;
+        }
+
         return view('comercialrooms.index', compact('data'));
     }
 
@@ -41,13 +52,17 @@ class ComercialRoomController extends Controller
             'address' => 'required',
             'value' => 'required',
             ]);
+
+        $moeda=str_replace(",", ".", $request->value);
+        $request['value']=$moeda.'';
+
     
         $commercialroom = CommercialRoom::create([
             'number' => $validatedData['number'],
             'description' => $validatedData['description'],
             'qtd_bedrooms' => $validatedData['qtd_bedrooms'],
             'address' => $validatedData['address'],
-            'value' => $validatedData['value'],
+            'value' => $request->value,
             ]);
 
         $files = $request->file('imagens');
