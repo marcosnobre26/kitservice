@@ -4,7 +4,6 @@ import Navbar from "../Navbar";
 import Header from "./Header";
 import { Container } from "./style";
 import Showcase from "./Showcase";
-
 const Rent = () => {
     return (
         <Container>

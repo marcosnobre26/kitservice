@@ -3,12 +3,12 @@ import RentInfo from "./RentInfo";
 import RentTitle from "./RentTitle";
 import { RentInfoContainer, RentStyle } from "./style";
 
-const Rent = () => (
+const Rent = ({ value, title, description, images }) => (
     <RentStyle>
-        <RentHeader />
+        <RentHeader images={images} />
         <RentInfoContainer>
-            <RentTitle />
-            <RentInfo />
+            <RentTitle title={title} />
+            <RentInfo description={description} />
         </RentInfoContainer>
     </RentStyle>
 );

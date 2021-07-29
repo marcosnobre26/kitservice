@@ -8,13 +8,16 @@ import { useHistory } from "react-router-dom";
 const Rent = ({ title, index, address, id, description, images }) => {
     const history = useHistory();
     const condoRedirect = () => {
-        history.push(`/condo/${id}`);
+        history.push({ pathname: `/condo/${id}`, state: { id: id } });
     };
     return (
         <RentStyle id={index ? index : ""}>
             <RentHeader images={images} />
             <RentInfoContainer>
-                <RentTitle title={title} onClick={condoRedirect} />
+                <RentTitle
+                    title={title ? title : "SALA COMERCIAL"}
+                    onClick={condoRedirect}
+                />
                 <RentAddress address={address} />
                 <RentInfo description={description} />
             </RentInfoContainer>

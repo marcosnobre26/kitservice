@@ -11,25 +11,35 @@ import Unavailable from "./Unavailable";
 const Condo = () => {
     const { id } = useParams();
     const [condo, setCondo] = useState();
+    const [kitnets, setKitnets] = useState();
     const getCondominiums = () => {
         CondominiumsService.getid(id).then((data) => {
             setCondo(data.data);
         });
     };
+    const getKitnets = () => {
+        CondominiumsService.kitnetList(id).then((data) => {
+            setKitnets(data.data);
+        });
+    };
     useEffect(() => {
         getCondominiums();
+        getKitnets();
     }, []);
-    console.log(condo);
-    const kitnets = condo ? condo.kitnets : [];
+
     console.log(kitnets);
     return (
         <Container>
             <Navbar />
             <Header />
             {condo ? (
-                <Description title={condo.name} address={condo.address} />
+                <Description
+                    title={condo.name}
+                    address={condo.address}
+                    description={condo.description}
+                />
             ) : null}
-            <Showcase />
+            <Showcase data={kitnets} />
             {/* {kitnets.length > 0 ? <Showcase /> : <Unavailable />} */}
             <Footer />
         </Container>

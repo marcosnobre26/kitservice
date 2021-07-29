@@ -42,7 +42,6 @@ const Showcase = ({ condos }) => {
     //     ref.current.addEventListener("mousedown", mouseDown);
     //     ref.current.addEventListener("mouseup", mouseUp);
     // });
-    console.log(condos);
     return (
         <ShowcaseStyle>
             <Prev onClick={() => scroll("prev")}>{"<"}</Prev>

@@ -2,9 +2,7 @@ import { Line, TitleStyled } from "./style";
 
 const RentTitle = ({ title, onClick }) => (
     <>
-        <TitleStyled onClick={onClick}>
-            {title ? title.toUpperCase() : "ALUGUE"}
-        </TitleStyled>
+        <TitleStyled onClick={onClick}>{title.toUpperCase()}</TitleStyled>
         <Line />
     </>
 );
