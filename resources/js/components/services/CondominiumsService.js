@@ -1,15 +1,18 @@
-
 import axios from "axios";
 
 const get = () => {
-    return axios.get('/api/condominiums');
+    return axios.get("/api/condominiums");
 };
 
-const create = data => {
+const kitnetList = (id) => {
+    return axios.get(`/api/condominium/${id}/kitnets`);
+};
+
+const create = (data) => {
     return axios.post("/api/condominium", data);
 };
 
-const getid = id => {
+const getid = (id) => {
     return axios.get(`/api/condominium/${id}`);
 };
 
@@ -17,7 +20,7 @@ const update = (id, data) => {
     return axios.put(`/api/condominium/${id}`, data);
 };
 
-const remove = id => {
+const remove = (id) => {
     return axios.delete(`/api/condominium/${id}`);
 };
 
@@ -26,5 +29,6 @@ export default {
     create,
     get,
     getid,
-    update
-  };
+    update,
+    kitnetList,
+};

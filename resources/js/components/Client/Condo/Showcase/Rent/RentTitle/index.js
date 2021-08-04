@@ -1,8 +1,8 @@
 import { Line, TitleStyled } from "./style";
 
-const RentTitle = () => (
+const RentTitle = ({ title }) => (
     <>
-        <TitleStyled>Kitnet</TitleStyled>
+        <TitleStyled>{title}</TitleStyled>
         <Line />
     </>
 );

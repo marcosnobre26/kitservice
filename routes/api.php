@@ -35,11 +35,11 @@ Route::delete('/condominium/{id}', 'CondominiumController@destroy');
 Route::put('/condominium/{id}', 'CondominiumController@update');
 Route::get('/condominium/{id}/kitnets/', 'CondominiumController@getForCondominium');
 
-Route::get('/kitnets', 'KitnetController@index');
-Route::post('/kitnet', 'KitnetController@store');
-Route::get('/kitnet/{id}', 'KitnetController@show');
-Route::delete('/kitnet/{id}', 'KitnetController@destroy');
-Route::put('/kitnet/{id}', 'KitnetController@update');
+Route::get('/kitnets', 'KitNetController@index');
+Route::post('/kitnet', 'KitNetController@store');
+Route::get('/kitnet/{id}', 'KitNetController@show');
+Route::delete('/kitnet/{id}', 'KitNetController@destroy');
+Route::put('/kitnet/{id}', 'KitNetController@update');
 
 Route::get('/coomercial-rooms', 'CommercialRoomController@index');
 Route::post('/coomercial-room', 'CommercialRoomController@store');

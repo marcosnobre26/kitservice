@@ -48,7 +48,7 @@ class KitNetController extends Controller
             'value' => 'required',
             'condominium_id' => 'required',
             ]);
-    
+
         $kitnet = KitNet::create([
             'number' => $validatedData['number'],
             'image' => $validatedData['image'],
@@ -57,15 +57,15 @@ class KitNetController extends Controller
             'value' => $validatedData['value'],
             'condominium_id' => $validatedData['condominium_id'],
             ]);
-    
+
         return response()->json('Kit-Net criado!');
     }
-    
+
     public function show($id)
     {
         $kitnet = KitNet::find($id);
         $kitnet->imagens=DB::table('image_kit_net')->where('kit_net_id', $kitnet->id)->get();
-        
+
         return $kitnet->toJson();
     }
 

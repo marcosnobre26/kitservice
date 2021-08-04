@@ -1,9 +1,28 @@
-import { HeaderImg, HeaderStyle } from "./style";
-import ap from "../../../../../../../media/ap.jpg";
+import { HeaderImg, HeaderStyle, PrevBtn, NextBtn } from "./style";
+import Carousel, { arrowsPlugin } from "@brainhubeu/react-carousel";
 
-const RentHeader = () => (
+const RentHeader = ({ images }) => (
     <HeaderStyle>
-        <HeaderImg src={ap} />
+        <Carousel
+            plugins={[
+                {
+                    resolve: arrowsPlugin,
+                    options: {
+                        arrowLeft: <PrevBtn>{"<"}</PrevBtn>,
+                        arrowLeftDisabled: <></>,
+                        arrowRight: <NextBtn>{">"}</NextBtn>,
+                        arrowRightDisabled: <></>,
+                        addArrowClickHandler: true,
+                    },
+                },
+                "centered",
+            ]}
+        >
+            {images &&
+                images.map((image, index) => (
+                    <HeaderImg key={index} src={"/storage" + image.image} />
+                ))}
+        </Carousel>
     </HeaderStyle>
 );
 

@@ -7,10 +7,10 @@ export const RentStyle = styled.div`
     width: calc(100% / 3 - 20px);
     margin-right: 30px;
     display: inline-block;
+    height: 450px;
     :last-child {
         margin-right: 0;
     }
-    cursor: pointer;
 `;
 
 export const RentInfoContainer = styled.div`

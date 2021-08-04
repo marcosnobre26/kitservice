@@ -6,17 +6,13 @@ import {
     AddressInfo,
 } from "./style";
 
-const Description = ({ title, address }) => (
+const Description = ({ title, address, description }) => (
     <Container>
         <Title>{title.toUpperCase()}</Title>
         <Address>
             Address: <AddressInfo>{address}</AddressInfo>
         </Address>
-        <DescriptionText>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-            semper nisl non velit condimentum, quis mollis quam gravida. Aliquam
-            pretium, leo sit amet iaculis euismod
-        </DescriptionText>
+        <DescriptionText>{description}</DescriptionText>
     </Container>
 );
 

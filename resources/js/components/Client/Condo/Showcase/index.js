@@ -1,34 +1,19 @@
-import { useEffect, useState } from "react";
-import CondominiumsService from "../../../services/CondominiumsService";
 import Rent from "./Rent";
 import { ShowcaseStyle } from "./style";
 
-const Showcase = () => {
-    const [condominiums, setCondominiums] = useState();
-    useEffect(() => {
-        retrieveCondominiums();
-    }, []);
-
-    const retrieveCondominiums = () => {
-        CondominiumsService.get()
-            .then((response) => {
-                console.log(response.data);
-                setCondominiums(response.data);
-                console.log(response.data);
-            })
-            .catch((e) => {
-                console.log(e);
-            });
-    };
-    console.log(condominiums);
+const Showcase = ({ data }) => {
     return (
         <ShowcaseStyle>
-            <Rent />
-            <Rent />
-            <Rent />
-            <Rent />
-            <Rent />
-            <Rent />
+            {data &&
+                data.map((item, index) => (
+                    <Rent
+                        key={index}
+                        value={item.value}
+                        title={item.number}
+                        description={item.description}
+                        images={item.imagens}
+                    />
+                ))}
         </ShowcaseStyle>
     );
 };

@@ -23,12 +23,8 @@ const Header = () => {
             >
                 <Section>
                     <BackImg img={slide1} />
-                    <BackImg img={slide2} />
-                    <BackImg img={slide1} />
                 </Section>
                 <Section>
-                    <BackImg img={slide2} />
-                    <BackImg img={slide1} />
                     <BackImg img={slide2} />
                 </Section>
             </Carousel>

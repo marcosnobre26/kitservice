@@ -52,7 +52,10 @@ const Showcase = ({ condos }) => {
                               <Rent
                                   key={condo.id}
                                   title={condo.name}
+                                  address={condo.address}
+                                  description={condo.description}
                                   id={condo.id}
+                                  images={condo.imagens}
                               />
                           );
                       })
