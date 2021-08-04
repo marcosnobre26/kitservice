@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Models\CommercialRoom;
+use App\Models\CommercialPoint;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -21,9 +22,11 @@ class ComercialRoomController extends Controller
 
     public function index(Request $request)
     {
-        $data = CommercialRoom::orderBy('number')
-        ->when($request->has('address'), function($query) use($request){
-            return $query->where('address', 'like', '%' . $request->address . '%');
+        $comercialpoints = CommercialPoint::orderBy('name')->get();
+
+        $data = CommercialRoom::with('commercialpoint')->orderBy('number')
+        ->when($request->has('commercial_point_id'), function($query) use($request){
+            return $query->where('commercial_point_id', '=' ,$request->commercial_point_id);
         })
         ->paginate(5);
 
@@ -33,12 +36,13 @@ class ComercialRoomController extends Controller
             $value->value=$moeda;
         }
 
-        return view('comercialrooms.index', compact('data'));
+        return view('comercialrooms.index', compact('data','comercialpoints'));
     }
 
     public function create()
     {
-        return view('comercialrooms.create');
+        $comercialpoints = CommercialPoint::orderBy('name')->get();
+        return view('comercialrooms.create', compact('comercialpoints'));
     }
 
 
@@ -49,7 +53,6 @@ class ComercialRoomController extends Controller
             'number' => 'required',
             'description' => 'required',
             'qtd_bedrooms' => 'required',
-            'address' => 'required',
             'value' => 'required',
             ]);
 
@@ -61,7 +64,6 @@ class ComercialRoomController extends Controller
             'number' => $validatedData['number'],
             'description' => $validatedData['description'],
             'qtd_bedrooms' => $validatedData['qtd_bedrooms'],
-            'address' => $validatedData['address'],
             'value' => $request->value,
             ]);
 
@@ -88,7 +90,13 @@ class ComercialRoomController extends Controller
     public function show($id)
     {
         $item = CommercialRoom::find($id);
-        return view('comercialrooms.show', compact('item'));
+        $imagens = DB::table('image_commercial_room')->where('commercial_room_id','=', $id)->get();
+
+        $numero = $item->value;
+        $moeda=number_format($numero, 2, ',', '.');
+        $item->value=$moeda;
+        
+        return view('comercialrooms.show', compact('item','imagens'));
     }
 
 
@@ -96,17 +104,15 @@ class ComercialRoomController extends Controller
     {
         $item = CommercialRoom::findOrFail($id);
 
-        /*Validator::make(
-            $request->all(),
-            $this->rules($request, $item->getKey())
-        )->validate();
         $validatedData = $request->validate([
             'number' => 'required',
-            'image' => 'required',
+            'description' => 'required',
             'qtd_bedrooms' => 'required',
-            'address' => 'required',
             'value' => 'required',
-            ]);*/
+            ]);
+
+        $moeda=str_replace(",", ".", $request->value);
+        $request['value']=$moeda.'';
 
 
         $this->uploadImages($id, $request->SavesImagens);
@@ -114,11 +120,6 @@ class ComercialRoomController extends Controller
         $item->fill($request->all())->save();
 
         $files = $request->file('imagens');
-
-        /*Validator::make(
-            $request->all(),
-            $this->rules($request, $item->getKey())
-        )->validate();*/
 
         if($request->hasFile('imagens'))
         {
@@ -156,8 +157,9 @@ class ComercialRoomController extends Controller
     public function edit($id)
     {
         $item = CommercialRoom::findOrFail($id);
+        $comercialpoints = CommercialPoint::orderBy('name')->get();
         $imagens = DB::table('image_commercial_room')->where('commercial_room_id','=', $id)->get();
-        return view('comercialrooms.edit', compact('item','imagens'));
+        return view('comercialrooms.edit', compact('item','imagens','comercialpoints'));
     }
 
     protected function deleteAll($id)

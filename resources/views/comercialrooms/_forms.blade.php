@@ -6,10 +6,12 @@
     </div>
 
     <div class="col-md-6">
-        {!!Form::text('address', 'Endereço')
-        ->attrs(['maxlength' => 60])
+        {!!Form::select('commercial_point_id', 'Condominio')
+        ->options($comercialpoints->prepend('Selecione',''),'name')
+        ->required()
         !!}
     </div>
+    
 
     <div class="col-md-12">
         {!!Form::textarea('description', 'Description')!!}

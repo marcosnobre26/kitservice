@@ -80,7 +80,9 @@ class CondominiumController extends Controller
     public function show($id)
     {
         $item = Condominium::with('kitnets')->find($id);
-        return view('condominiums.show', compact('item'));
+        $imagens = DB::table('image_condominium')->where('condominium_id','=', $id)->get();
+
+        return view('condominiums.show', compact('item','imagens'));
     }
 
     public function edit($id)

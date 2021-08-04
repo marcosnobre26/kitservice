@@ -1,4 +1,4 @@
-@extends('layouts.app', ['page' => 'Condominios', 'pageSlug' => 'condominiums'])
+@extends('layouts.app', ['page' => 'Pontos Comerciais', 'pageSlug' => 'comercialpoints'])
 
 @section('content')
 <div class="row">
@@ -7,10 +7,10 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-8">
-                        <h4 class="card-title"><i class="fas fa-business-time"></i> Salas Comerciais</h4>
+                        <h4 class="card-title"><i class="fas fa-map-marked-alt"></i> Pontos Comerciais</h4>
                     </div>
                     <div class="col-4 text-right">
-                        <a href="{{ route('comercialrooms.create') }}" class="btn btn-sm btn-primary">Adicionar Novo</a>
+                        <a href="{{ route('comercialpoints.create') }}" class="btn btn-sm btn-primary">Adicionar Novo</a>
                     </div>
                 </div>
             </div>
@@ -24,11 +24,9 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-12">
-
-                                    {!!Form::select('commercial_point_id', 'Pontos Comerciais',)
-                                    ->options($comercialpoints->prepend('Selecione',''),'name')
-                                    ->required()
-                                    !!}
+                                    {!!Form::text('address', 'Endereço')
+                                    ->required(false)
+                                    ->attrs(['class' => 'form-control'])!!}
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-filtro btn-sm btn-primary">Filtrar
@@ -42,29 +40,25 @@
                 <div class="">
                     <table class="table tablesorter table-striped" id="">
                         <thead class=" text-primary">
-                            <th scope="col">Numero</th>
-                            <th scope="col">Ponto Comercial</th>
+                            <th scope="col">Nome</th>
                             <th scope="col">Endereço</th>
-                            <th scope="col">Preço</th>
                             <th scope="col" class="text-right">Ação</th>
                         </thead>
                         <tbody>
                             @forelse ($data as $item)
                             <tr>
-                                <td>{{ $item->number }}</td>
-                                <td>{{ $item->commercialpoint->name }}</td>
-                                <td>{{ $item->commercialpoint->address }}</td>
-                                <td>R$ {{ $item->value }}</td>
+                                <td>{{ $item->name }}</td>
+                                <td>{{ $item->address }}</td>
                                 <td class="text-right">
-                                    <form action="{{ route('comercialrooms.destroy', $item->id) }}" method="POST"
+                                    <form action="{{ route('comercialpoints.destroy', $item->id) }}" method="POST"
                                         id="form-{{$item->id}}">
                                         @csrf
                                         @method('delete')
-                                        <a href="{{ route('comercialrooms.show', $item) }}">
+                                        <a href="{{ route('comercialpoints.show', $item) }}">
                                             <button type="button" class="btn btn-primary">Visualizar</button>
                                         </a>
                                     
-                                        <a href="{{ route('comercialrooms.edit', $item) }}">
+                                        <a href="{{ route('comercialpoints.edit', $item) }}">
                                             <button type="button" class="btn btn-success">Editar</button>
                                         </a>
                                         <input type="hidden" name="_method" value="DELETE">

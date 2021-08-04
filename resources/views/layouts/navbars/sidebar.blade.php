@@ -16,10 +16,16 @@
           <a class="nav-link" href="{{ route('condominiums.index') }}"><i class="fas fa-building"></i>Condominios</a>
         
         </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ route('comercialpoints.index') }}"><i class="fas fa-map-marked-alt"></i>Pontos Comerciais</a>
+        </li>
       
         <li class="nav-item active">
           <a class="nav-link" href="{{ route('comercialrooms.index') }}"><i class="fas fa-business-time"></i>Salas Comerciais</a>
         </li>
+
+        
         
       </ul>
     </div>

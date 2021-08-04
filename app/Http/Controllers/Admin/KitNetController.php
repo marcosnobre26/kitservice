@@ -94,13 +94,34 @@ class KitNetController extends Controller
     public function show($id)
     {
         $item = KitNet::with('condominium')->find($id);
-        return view('kitnets.show', compact('item'));
+        $imagens = DB::table('image_kit_net')->where('kit_net_id','=', $id)->get();
+
+        $numero = $item->value;
+        $moeda=number_format($numero, 2, ',', '.');
+        $item->value=$moeda;
+
+        
+    
+
+        return view('kitnets.show', compact('item','imagens'));
     }
 
 
     public function update(Request $request, $id)
     {
         $item = KitNet::findOrFail($id);
+
+        $validatedData = $request->validate([
+            'number' => 'required',
+            'description' => 'required',
+            'qtd_bedrooms' => 'required',
+            'qtd_bathrooms' => 'required',
+            'value' => 'required',
+            'condominium_id' => 'required',
+            ]);
+
+        $moeda=str_replace(",", ".", $request->value);
+        $request['value']=$moeda.'';
         
         $this->uploadImages($id, $request->SavesImagens);
 
@@ -115,9 +136,9 @@ class KitNetController extends Controller
                 $name = $file->getClientOriginalName();
 
                 DB::table('image_kit_net')->insert([
-                    'image_id' => $item->id,
+                    //'kit_net_id' => $item->id,
                     'image' => '/kitnets/'.$item->id.'/'.$name,
-                    'type' => '1',
+                    //'type' => '1',
                     'kit_net_id' => $item->id
 
                 ]);

@@ -21,8 +21,9 @@ use Illuminate\Support\Facades\Route;
 //Route::resource('condominiunsadm', 'CondominiumController');
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 Route::resource('admin/condominiums', 'Admin\CondominiumController');
-Route::resource('admin/kitnets', 'Admin\KitnetController');
+Route::resource('admin/kitnets', 'Admin\KitNetController');
 Route::resource('admin/comercialrooms', 'Admin\ComercialRoomController');
+Route::resource('admin/comercialpoints', 'Admin\CommercialPointController');
 
 //Route::view('/{path?}', 'app');
 Route::get('/teste', function () {
