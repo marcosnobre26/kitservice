@@ -10,8 +10,8 @@ import CommercialRoomService from "../../services/CommercialRoomService";
 import { useEffect, useState } from "react";
 
 const Home = () => {
-    const [condos, setCondos] = useState();
-    const [commercial, setCommercial] = useState();
+    const [condos, setCondos] = useState([]);
+    const [commercial, setCommercial] = useState([]);
 
     const getCondominiums = () => {
         CondominiumsService.get().then((data) => {

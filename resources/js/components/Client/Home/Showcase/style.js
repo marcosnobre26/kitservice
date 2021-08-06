@@ -5,14 +5,12 @@ export const ShowcaseStyle = styled.div`
     :first-child {
         margin-top: 145px;
     }
-    position: relative;
 `;
 
 export const ShowcaseCategory = styled.div`
     margin-bottom: 30px;
     overflow-x: scroll;
     overflow-x: scroll;
-    overflow-y: hidden;
     white-space: nowrap;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -21,6 +19,14 @@ export const ShowcaseCategory = styled.div`
     }
     scroll-behavior: smooth;
     /* cursor: grab; */
+`;
+
+export const Section = styled.div`
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
 `;
 
 export const Prev = styled.p`
