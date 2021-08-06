@@ -7335,6 +7335,111 @@ var HeaderTitle = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.h1(_tem
 
 /***/ }),
 
+/***/ "./resources/js/components/Client/Condo/Showcase/Rent/Bathrooms/index.js":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/Client/Condo/Showcase/Rent/Bathrooms/index.js ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style */ "./resources/js/components/Client/Condo/Showcase/Rent/Bathrooms/style.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+var Bathrooms = function Bathrooms(_ref) {
+  var bathrooms = _ref.bathrooms;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_0__.Title, {
+    children: ["Banheiros: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.Number, {
+      children: bathrooms
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Bathrooms);
+
+/***/ }),
+
+/***/ "./resources/js/components/Client/Condo/Showcase/Rent/Bathrooms/style.js":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/Client/Condo/Showcase/Rent/Bathrooms/style.js ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Title": () => (/* binding */ Title),
+/* harmony export */   "Number": () => (/* binding */ Number)
+/* harmony export */ });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+var _templateObject, _templateObject2;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+var Title = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.p(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    font-weight: 600;\n"])));
+var Number = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.span(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    font-weight: 500;\n"])));
+
+/***/ }),
+
+/***/ "./resources/js/components/Client/Condo/Showcase/Rent/Price/index.js":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/Client/Condo/Showcase/Rent/Price/index.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style */ "./resources/js/components/Client/Condo/Showcase/Rent/Price/style.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+var Price = function Price(_ref) {
+  var price = _ref.price;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_0__.Title, {
+    children: ["Valor: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_0__.Value, {
+      children: ["R$", price]
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Price);
+
+/***/ }),
+
+/***/ "./resources/js/components/Client/Condo/Showcase/Rent/Price/style.js":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/Client/Condo/Showcase/Rent/Price/style.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Title": () => (/* binding */ Title),
+/* harmony export */   "Value": () => (/* binding */ Value)
+/* harmony export */ });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+var _templateObject, _templateObject2;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+var Title = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.p(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    font-weight: 600;\n"])));
+var Value = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.span(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    font-weight: 500;\n"])));
+
+/***/ }),
+
 /***/ "./resources/js/components/Client/Condo/Showcase/Rent/RentHeader/index.js":
 /*!********************************************************************************!*\
   !*** ./resources/js/components/Client/Condo/Showcase/Rent/RentHeader/index.js ***!
@@ -7515,6 +7620,59 @@ var Line = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.hr(_templateOb
 
 /***/ }),
 
+/***/ "./resources/js/components/Client/Condo/Showcase/Rent/Rooms/index.js":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/Client/Condo/Showcase/Rent/Rooms/index.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style */ "./resources/js/components/Client/Condo/Showcase/Rent/Rooms/style.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+var Rooms = function Rooms(_ref) {
+  var rooms = _ref.rooms;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_0__.Title, {
+    children: ["Quartos: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.Number, {
+      children: rooms
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Rooms);
+
+/***/ }),
+
+/***/ "./resources/js/components/Client/Condo/Showcase/Rent/Rooms/style.js":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/Client/Condo/Showcase/Rent/Rooms/style.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Title": () => (/* binding */ Title),
+/* harmony export */   "Number": () => (/* binding */ Number)
+/* harmony export */ });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+var _templateObject, _templateObject2;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+var Title = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.p(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    font-weight: 600;\n"])));
+var Number = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.span(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    font-weight: 500;\n"])));
+
+/***/ }),
+
 /***/ "./resources/js/components/Client/Condo/Showcase/Rent/index.js":
 /*!*********************************************************************!*\
   !*** ./resources/js/components/Client/Condo/Showcase/Rent/index.js ***!
@@ -7526,11 +7684,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _RentHeader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RentHeader */ "./resources/js/components/Client/Condo/Showcase/Rent/RentHeader/index.js");
-/* harmony import */ var _RentInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RentInfo */ "./resources/js/components/Client/Condo/Showcase/Rent/RentInfo/index.js");
-/* harmony import */ var _RentTitle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./RentTitle */ "./resources/js/components/Client/Condo/Showcase/Rent/RentTitle/index.js");
-/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style */ "./resources/js/components/Client/Condo/Showcase/Rent/style.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Bathrooms__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Bathrooms */ "./resources/js/components/Client/Condo/Showcase/Rent/Bathrooms/index.js");
+/* harmony import */ var _Price__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Price */ "./resources/js/components/Client/Condo/Showcase/Rent/Price/index.js");
+/* harmony import */ var _RentHeader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./RentHeader */ "./resources/js/components/Client/Condo/Showcase/Rent/RentHeader/index.js");
+/* harmony import */ var _RentInfo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./RentInfo */ "./resources/js/components/Client/Condo/Showcase/Rent/RentInfo/index.js");
+/* harmony import */ var _RentTitle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./RentTitle */ "./resources/js/components/Client/Condo/Showcase/Rent/RentTitle/index.js");
+/* harmony import */ var _Rooms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Rooms */ "./resources/js/components/Client/Condo/Showcase/Rent/Rooms/index.js");
+/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./style */ "./resources/js/components/Client/Condo/Showcase/Rent/style.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
 
 
 
@@ -7542,15 +7706,23 @@ var Rent = function Rent(_ref) {
   var value = _ref.value,
       title = _ref.title,
       description = _ref.description,
-      images = _ref.images;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_3__.RentStyle, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_RentHeader__WEBPACK_IMPORTED_MODULE_0__.default, {
+      images = _ref.images,
+      rooms = _ref.rooms,
+      bathrooms = _ref.bathrooms;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_6__.RentStyle, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_RentHeader__WEBPACK_IMPORTED_MODULE_2__.default, {
       images: images
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_3__.RentInfoContainer, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_RentTitle__WEBPACK_IMPORTED_MODULE_2__.default, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_6__.RentInfoContainer, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_RentTitle__WEBPACK_IMPORTED_MODULE_4__.default, {
         title: title
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_RentInfo__WEBPACK_IMPORTED_MODULE_1__.default, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_RentInfo__WEBPACK_IMPORTED_MODULE_3__.default, {
         description: description
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Rooms__WEBPACK_IMPORTED_MODULE_5__.default, {
+        rooms: rooms
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Bathrooms__WEBPACK_IMPORTED_MODULE_0__.default, {
+        bathrooms: bathrooms
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Price__WEBPACK_IMPORTED_MODULE_1__.default, {
+        price: value
       })]
     })]
   });
@@ -7609,7 +7781,9 @@ var Showcase = function Showcase(_ref) {
         value: item.value,
         title: item.number,
         description: item.description,
-        images: item.imagens
+        images: item.imagens,
+        rooms: item.qtd_bedrooms,
+        bathrooms: item.qtd_bathrooms
       }, index);
     })
   });
@@ -7821,10 +7995,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 var Footer = function Footer() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_0__.FooterStyle, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.FooterMap, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.FooterInfo, {})]
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.FooterStyle, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.FooterInfo, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.Text, {
+        children: "Kit Service Loca\xE7\xE3od e kitnetes. Todos os Direitos Reservados."
+      })
+    })
   });
 };
 
@@ -7843,19 +8020,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "FooterStyle": () => (/* binding */ FooterStyle),
 /* harmony export */   "FooterMap": () => (/* binding */ FooterMap),
-/* harmony export */   "FooterInfo": () => (/* binding */ FooterInfo)
+/* harmony export */   "FooterInfo": () => (/* binding */ FooterInfo),
+/* harmony export */   "Text": () => (/* binding */ Text)
 /* harmony export */ });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _media_map_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../media/map.png */ "./resources/media/map.png");
-var _templateObject, _templateObject2, _templateObject3;
+var _templateObject, _templateObject2, _templateObject3, _templateObject4;
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
 
-var FooterStyle = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    margin-top: 50px;\n    background-color: orange;\n    height: 200px;\n    display: flex;\n    padding: 0 80px;\n"])));
+var FooterStyle = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    margin-top: 50px;\n    background-color: orange;\n    display: flex;\n    padding: 0 80px;\n    justify-content: center;\n"])));
 var FooterMap = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    background-image: url(", ");\n    background-size: cover;\n    flex: 1;\n"])), _media_map_png__WEBPACK_IMPORTED_MODULE_0__.default);
 var FooterInfo = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    height: 100%;\n    flex: 1;\n"])));
+var Text = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.p(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    font-weight: 600;\n    margin: 0;\n    text-align: center;\n"])));
 
 /***/ }),
 
@@ -7903,10 +8082,14 @@ var Header = function Header() {
           addArrowClickHandler: true
         }
       }],
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.Section, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.BackImg, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_0__.Section, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.BackImg, {
           img: _media_slide1_jpeg__WEBPACK_IMPORTED_MODULE_3__.default
-        })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.BackImg, {
+          img: _media_slide1_jpeg__WEBPACK_IMPORTED_MODULE_3__.default
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.BackImg, {
+          img: _media_slide1_jpeg__WEBPACK_IMPORTED_MODULE_3__.default
+        })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.Section, {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.BackImg, {
           img: _media_slide2_jpeg__WEBPACK_IMPORTED_MODULE_4__.default
@@ -8718,76 +8901,6 @@ var Next = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.p(_templateObj
 
 /***/ }),
 
-/***/ "./resources/js/components/Client/Home/SumAbout/index.js":
-/*!***************************************************************!*\
-  !*** ./resources/js/components/Client/Home/SumAbout/index.js ***!
-  \***************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style */ "./resources/js/components/Client/Home/SumAbout/style.js");
-/* harmony import */ var _media_aboutImg_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../media/aboutImg.png */ "./resources/media/aboutImg.png");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-
-var SumAbout = function SumAbout() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_0__.SumAboutStyle, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_0__.SumAboutInfo, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.SumAboutTitle, {
-        children: "QUEM SOMOS"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.SumAboutText, {
-        children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer semper nisl non velit condimentum, quis mollis quam gravida. Aliquam pretium, leo sit amet iaculis euismod, mauris nisi rhoncus diam, eget rhoncus risus massa quis magna. Donec velit nisl, pharetra sit amet convallis sit amet, laoreet id arcu. In id cursus leo. In dolor enim, vestibulum a justo at."
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.SumAboutButton, {
-        children: "SOBRE N\xD3S"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_style__WEBPACK_IMPORTED_MODULE_0__.SumAboutImg, {
-      src: _media_aboutImg_png__WEBPACK_IMPORTED_MODULE_1__.default
-    })]
-  });
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SumAbout);
-
-/***/ }),
-
-/***/ "./resources/js/components/Client/Home/SumAbout/style.js":
-/*!***************************************************************!*\
-  !*** ./resources/js/components/Client/Home/SumAbout/style.js ***!
-  \***************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "SumAboutStyle": () => (/* binding */ SumAboutStyle),
-/* harmony export */   "SumAboutInfo": () => (/* binding */ SumAboutInfo),
-/* harmony export */   "SumAboutTitle": () => (/* binding */ SumAboutTitle),
-/* harmony export */   "SumAboutText": () => (/* binding */ SumAboutText),
-/* harmony export */   "SumAboutButton": () => (/* binding */ SumAboutButton),
-/* harmony export */   "SumAboutImg": () => (/* binding */ SumAboutImg)
-/* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6;
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-var SumAboutStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    display: flex;\n    padding: 0 80px;\n    margin-top: 50px;\n    gap: 50px;\n"])));
-var SumAboutInfo = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    gap: 20px;\n"])));
-var SumAboutTitle = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.h1(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    font-weight: bold;\n    font-size: 40px;\n    color: #4f4f4f;\n    margin: 0;\n"])));
-var SumAboutText = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.p(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral([""])));
-var SumAboutButton = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.button(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    height: 60px;\n    background: #f2c94c;\n    border: none;\n    border-radius: 10px;\n    color: white;\n    font-size: 30px;\n    font-weight: bold;\n"])));
-var SumAboutImg = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.img(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral([""])));
-
-/***/ }),
-
 /***/ "./resources/js/components/Client/Home/index.js":
 /*!******************************************************!*\
   !*** ./resources/js/components/Client/Home/index.js ***!
@@ -8803,13 +8916,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header */ "./resources/js/components/Client/Home/Header/index.js");
 /* harmony import */ var _Search__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Search */ "./resources/js/components/Client/Home/Search/index.js");
 /* harmony import */ var _Showcase__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Showcase */ "./resources/js/components/Client/Home/Showcase/index.js");
-/* harmony import */ var _SumAbout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SumAbout */ "./resources/js/components/Client/Home/SumAbout/index.js");
-/* harmony import */ var _Navbar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Navbar */ "./resources/js/components/Client/Navbar/index.js");
-/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Footer */ "./resources/js/components/Client/Footer/index.js");
-/* harmony import */ var _services_CondominiumsService__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../services/CondominiumsService */ "./resources/js/components/services/CondominiumsService.js");
-/* harmony import */ var _services_CommercialRoomService__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../services/CommercialRoomService */ "./resources/js/components/services/CommercialRoomService.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Navbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Navbar */ "./resources/js/components/Client/Navbar/index.js");
+/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Footer */ "./resources/js/components/Client/Footer/index.js");
+/* harmony import */ var _services_CondominiumsService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../services/CondominiumsService */ "./resources/js/components/services/CondominiumsService.js");
+/* harmony import */ var _services_CommercialRoomService__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../services/CommercialRoomService */ "./resources/js/components/services/CommercialRoomService.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -8834,42 +8946,41 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 var Home = function Home() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_9__.useState)(),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_8__.useState)(),
       _useState2 = _slicedToArray(_useState, 2),
       condos = _useState2[0],
       setCondos = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_9__.useState)(),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_8__.useState)(),
       _useState4 = _slicedToArray(_useState3, 2),
       commercial = _useState4[0],
       setCommercial = _useState4[1];
 
   var getCondominiums = function getCondominiums() {
-    _services_CondominiumsService__WEBPACK_IMPORTED_MODULE_7__.default.get().then(function (data) {
+    _services_CondominiumsService__WEBPACK_IMPORTED_MODULE_6__.default.get().then(function (data) {
       setCondos(data.data);
     });
   };
 
   var getCommercial = function getCommercial() {
-    _services_CommercialRoomService__WEBPACK_IMPORTED_MODULE_8__.default.get().then(function (data) {
+    _services_CommercialRoomService__WEBPACK_IMPORTED_MODULE_7__.default.get().then(function (data) {
       setCommercial(data.data);
     });
   };
 
-  (0,react__WEBPACK_IMPORTED_MODULE_9__.useEffect)(function () {
+  (0,react__WEBPACK_IMPORTED_MODULE_8__.useEffect)(function () {
     getCondominiums();
     getCommercial();
   }, []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_0__.HomeStyle, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Navbar__WEBPACK_IMPORTED_MODULE_5__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Header__WEBPACK_IMPORTED_MODULE_1__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Search__WEBPACK_IMPORTED_MODULE_2__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Showcase__WEBPACK_IMPORTED_MODULE_3__.default, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_0__.HomeStyle, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Navbar__WEBPACK_IMPORTED_MODULE_4__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Header__WEBPACK_IMPORTED_MODULE_1__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Search__WEBPACK_IMPORTED_MODULE_2__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Showcase__WEBPACK_IMPORTED_MODULE_3__.default, {
         condos: condos
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Showcase__WEBPACK_IMPORTED_MODULE_3__.default, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Showcase__WEBPACK_IMPORTED_MODULE_3__.default, {
         condos: commercial
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_SumAbout__WEBPACK_IMPORTED_MODULE_4__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Footer__WEBPACK_IMPORTED_MODULE_6__.default, {})]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Footer__WEBPACK_IMPORTED_MODULE_5__.default, {})]
   });
 };
 

@@ -4,9 +4,9 @@ import map from "../../../../media/map.png";
 export const FooterStyle = styled.div`
     margin-top: 50px;
     background-color: orange;
-    height: 200px;
     display: flex;
     padding: 0 80px;
+    justify-content: center;
 `;
 
 export const FooterMap = styled.div`
@@ -17,4 +17,10 @@ export const FooterMap = styled.div`
 export const FooterInfo = styled.div`
     height: 100%;
     flex: 1;
+`;
+
+export const Text = styled.p`
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
 `;
