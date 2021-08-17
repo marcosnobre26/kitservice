@@ -12,6 +12,8 @@ const Showcase = ({ data }) => {
                         title={item.number}
                         description={item.description}
                         images={item.imagens}
+                        rooms={item.qtd_bedrooms}
+                        bathrooms={item.qtd_bathrooms}
                     />
                 ))}
         </ShowcaseStyle>

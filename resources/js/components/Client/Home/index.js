@@ -2,7 +2,6 @@ import { HomeStyle } from "./style";
 import Header from "./Header";
 import Search from "./Search";
 import Showcase from "./Showcase";
-import SumAbout from "./SumAbout";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 
@@ -11,8 +10,8 @@ import CommercialRoomService from "../../services/CommercialRoomService";
 import { useEffect, useState } from "react";
 
 const Home = () => {
-    const [condos, setCondos] = useState();
-    const [commercial, setCommercial] = useState();
+    const [condos, setCondos] = useState([]);
+    const [commercial, setCommercial] = useState([]);
 
     const getCondominiums = () => {
         CondominiumsService.get().then((data) => {
@@ -40,7 +39,6 @@ const Home = () => {
                 <Showcase condos={condos} />
                 <Showcase condos={commercial} />
             </div>
-            <SumAbout />
             <Footer />
         </HomeStyle>
     );

@@ -1,9 +1,12 @@
-import { FooterInfo, FooterMap, FooterStyle } from "./style";
+import { FooterInfo, Text, FooterStyle } from "./style";
 
 const Footer = () => (
     <FooterStyle>
-        <FooterMap />
-        <FooterInfo></FooterInfo>
+        <FooterInfo>
+            <Text>
+                Kit Service Locaçãod e kitnetes. Todos os Direitos Reservados.
+            </Text>
+        </FooterInfo>
     </FooterStyle>
 );
 

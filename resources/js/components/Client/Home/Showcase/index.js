@@ -1,7 +1,13 @@
+import Carousel, { arrowsPlugin } from "@brainhubeu/react-carousel";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { useEffect, useRef, useState } from "react";
 import CondominiumsService from "../../../services/CondominiumsService";
 import Rent from "./Rent";
-import { Next, Prev, ShowcaseCategory, ShowcaseStyle } from "./style";
+import { Next, Prev, ShowcaseCategory, ShowcaseStyle, Section } from "./style";
+import "./styles.css";
+
+import Slider from "react-slick";
 
 const Showcase = ({ condos }) => {
     const [current, setCurrent] = useState(0);
@@ -25,45 +31,53 @@ const Showcase = ({ condos }) => {
         ref.current.scroll(offset, 0);
         setCurrent(offset);
     };
-    // let mousePosDown = 0;
-    // let mousePosUp = 0;
-    // const mouseDown = (e) => {
-    //     mousePosDown = e.x;
-    // };
-    // const mouseUp = (e) => {
-    //     mousePosUp = e.x;
-    //     if (mousePosDown < mousePosUp) {
-    //         scroll("prev");
-    //     } else if (mousePosDown > mousePosUp) {
-    //         scroll("next");
-    //     }
-    // };
-    // useEffect(() => {
-    //     ref.current.addEventListener("mousedown", mouseDown);
-    //     ref.current.addEventListener("mouseup", mouseUp);
-    // });
+    let pages = condos.length / 6;
+    let pagesData = [];
+    console.log(Math.ceil(pages));
+    for (let i = 1; i <= Math.ceil(pages); i++) {
+        const condo = condos.filter(
+            (data, index) => index < i * 6 && index >= i * 6 - 6
+        );
+        pagesData.push(condo);
+    }
+
+    const toRender = pagesData.map((page) => (
+        <div>
+            <Section>
+                {page.map((condo) => (
+                    <Rent
+                        key={condo.id}
+                        title={condo.name}
+                        address={condo.address}
+                        description={condo.description}
+                        id={condo.id}
+                        images={condo.imagens}
+                    />
+                ))}
+            </Section>
+        </div>
+    ));
+
+    console.log(toRender);
+
+    const settings = {
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    };
+
     return (
         <ShowcaseStyle>
-            <Prev onClick={() => scroll("prev")}>{"<"}</Prev>
-            <ShowcaseCategory ref={ref}>
-                {condos
-                    ? condos.map((condo, index) => {
-                          return (
-                              <Rent
-                                  key={condo.id}
-                                  title={condo.name}
-                                  address={condo.address}
-                                  description={condo.description}
-                                  id={condo.id}
-                                  images={condo.imagens}
-                              />
-                          );
-                      })
-                    : null}
-            </ShowcaseCategory>
-            <Next onClick={() => scroll("next")}>{">"}</Next>
+            <Slider {...settings}>{toRender}</Slider>
         </ShowcaseStyle>
     );
 };
+
+const Sect = () => (
+    <Section>
+        <p>sled campos silva</p>
+    </Section>
+);
 
 export default Showcase;
