@@ -38,6 +38,33 @@
                         </div>
                         
                     </div>
+                    <div class="container">
+                        <p><strong>Imagens: </strong></p>
+                        <div class="card-deck">
+                            <div class="row">
+                                @if(isset($imagens))
+                                        @foreach($imagens as $item)
+                                        
+                                            <div class="col-4 p-2">
+                                                
+                                                    
+                                                            <img id="{{$item->id}}" class="img-upload-show" src="{{asset((isset($item) && $item->image!= null)?'storage/'.$item->image:'img/noimage.png')}}" alt="Minha Figura">
+
+                                                
+                                            </div>
+                                        
+                                        @endforeach
+                                @else
+                                    <div class="card m-2 shadow-sm">
+                                        <div class="card-body">
+                                            
+                                            <p>Sem imagem</p>
+                                        </div>
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

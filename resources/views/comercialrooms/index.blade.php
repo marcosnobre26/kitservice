@@ -46,6 +46,9 @@
                             <th scope="col">Ponto Comercial</th>
                             <th scope="col">Endereço</th>
                             <th scope="col">Preço</th>
+                            <th scope="col">Taxa</th>
+                            <th scope="col">Disponivel</th>
+                            
                             <th scope="col" class="text-right">Ação</th>
                         </thead>
                         <tbody>
@@ -55,6 +58,12 @@
                                 <td>{{ $item->commercialpoint->name }}</td>
                                 <td>{{ $item->commercialpoint->address }}</td>
                                 <td>R$ {{ $item->value }}</td>
+                                <td>R${{ $item->rate }}</td>
+                                @if ($item->status === 0)
+                                    <td><p>Sim</p></td>
+                                @else
+                                    <td><p>Não</p></td>
+                                @endif
                                 <td class="text-right">
                                     <form action="{{ route('comercialrooms.destroy', $item->id) }}" method="POST"
                                         id="form-{{$item->id}}">

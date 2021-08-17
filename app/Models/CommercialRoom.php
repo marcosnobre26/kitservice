@@ -12,7 +12,7 @@ class CommercialRoom extends Model//mesma coisa dos atibutos de kitnets com apen
     protected $table = 'commercial_room';
     
     protected $fillable = ['number', 'image', 'qtd_bedrooms',
-    'value', 'description','commercial_point_id'];
+    'value', 'description','commercial_point_id','rate','status'];
 
     
 

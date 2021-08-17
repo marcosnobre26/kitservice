@@ -58,6 +58,26 @@
                                     </p>
                                 </div>
                             </div>
+                            <div class="card m-2 shadow-sm">
+                                <div class="card-body">
+                                    <p><strong>Taxa: </strong></p>
+                                    <p class="card-text">
+                                        R${{ $item->rate }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card m-2 shadow-sm">
+                                <div class="card-body">
+                                    <p><strong>Disponivel: </strong></p>
+                                    <p class="card-text">
+                                        @if ($item->status === 0)
+                                            <p>Sim</p>
+                                        @else
+                                            <p>Não</p>
+                                        @endif
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="container">

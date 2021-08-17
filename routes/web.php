@@ -24,6 +24,7 @@ Route::resource('admin/condominiums', 'Admin\CondominiumController');
 Route::resource('admin/kitnets', 'Admin\KitNetController');
 Route::resource('admin/comercialrooms', 'Admin\ComercialRoomController');
 Route::resource('admin/comercialpoints', 'Admin\CommercialPointController');
+Route::resource('admin/about', 'Admin\AboutController');
 
 //Route::view('/{path?}', 'app');
 Route::get('/teste', function () {

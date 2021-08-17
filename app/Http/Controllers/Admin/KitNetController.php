@@ -22,7 +22,6 @@ class KitNetController extends Controller
 
     public function index(Request $request)
     {
-        //dd($request);
         $condominiuns = Condominium::orderBy('name')->get();
         $data = KitNet::orderBy('number')
         ->with('condominium')
@@ -35,6 +34,10 @@ class KitNetController extends Controller
             $numero = $value->value;
             $moeda=number_format($numero, 2, ',', '.');
             $value->value=$moeda;
+
+            $numero1 = $value->rate;
+            $moeda1=number_format($numero1, 2, ',', '.');
+            $value->rate=$moeda1;
         }
         
         return view('kitnets.index', compact('data','condominiuns'));
@@ -51,16 +54,21 @@ class KitNetController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'number' => 'required',
-            'description' => 'required',
-            'qtd_bedrooms' => 'required',
-            'qtd_bathrooms' => 'required',
-            'value' => 'required',
-            'condominium_id' => 'required',
+            'number' => ['required'],
+            'description' => ['required'],
+            'qtd_bedrooms' => ['required'],
+            'qtd_bathrooms' => ['required'],
+            'value' => ['required'],
+            'status' => ['required'],
+            'rate' => ['required'],
+            'condominium_id' => ['required'],
             ]);
 
         $moeda=str_replace(",", ".", $request->value);
         $request['value']=$moeda.'';
+
+        $moeda=str_replace(",", ".", $request->rate);
+        $request['rate']=$moeda.'';
     
         $kitnet = KitNet::create([
             'number' => $validatedData['number'],
@@ -68,6 +76,8 @@ class KitNetController extends Controller
             'qtd_bedrooms' => $validatedData['qtd_bedrooms'],
             'qtd_bathrooms' => $validatedData['qtd_bathrooms'],
             'value' => $request->value,
+            'status' => $validatedData['status'],
+            'rate' => $request->rate,
             'condominium_id' => $validatedData['condominium_id'],
         ]);
 
@@ -100,8 +110,9 @@ class KitNetController extends Controller
         $moeda=number_format($numero, 2, ',', '.');
         $item->value=$moeda;
 
-        
-    
+        $numero1 = $item->rate;
+        $moeda1=number_format($numero1, 2, ',', '.');
+        $item->rate=$moeda1;
 
         return view('kitnets.show', compact('item','imagens'));
     }
@@ -112,16 +123,21 @@ class KitNetController extends Controller
         $item = KitNet::findOrFail($id);
 
         $validatedData = $request->validate([
-            'number' => 'required',
-            'description' => 'required',
-            'qtd_bedrooms' => 'required',
-            'qtd_bathrooms' => 'required',
-            'value' => 'required',
-            'condominium_id' => 'required',
+            'number' => ['required'],
+            'description' => ['required'],
+            'qtd_bedrooms' => ['required'],
+            'qtd_bathrooms' => ['required'],
+            'status' => ['required'],
+            'rate' => ['required'],
+            'value' => ['required'],
+            'condominium_id' => ['required'],
             ]);
 
         $moeda=str_replace(",", ".", $request->value);
         $request['value']=$moeda.'';
+
+        $moeda=str_replace(",", ".", $request->rate);
+        $request['rate']=$moeda.'';
         
         $this->uploadImages($id, $request->SavesImagens);
 

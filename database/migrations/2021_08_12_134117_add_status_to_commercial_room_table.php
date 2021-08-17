@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddCommercialPointIdToCommercialRoomTable extends Migration
+class AddStatusToCommercialRoomTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,8 @@ class AddCommercialPointIdToCommercialRoomTable extends Migration
     public function up()
     {
         Schema::table('commercial_room', function (Blueprint $table) {
-
-            $table->bigInteger('commercial_point_id')->unsigned()->nullable();
-            $table->foreign('commercial_point_id')->references('id')->on('commercial_points');
+            $table->tinyInteger('status')->default(0);
+            $table->decimal('rate', 10, 2);
         });
     }
 
@@ -28,8 +27,8 @@ class AddCommercialPointIdToCommercialRoomTable extends Migration
     public function down()
     {
         Schema::table('commercial_room', function (Blueprint $table) {
-            //$table->dropForeign(['commercial_point_id']);
-            //$table->dropColumn('commercial_point_id');
+            $table->dropColumn('status');
+            $table->dropColumn('rate');
         });
     }
 }

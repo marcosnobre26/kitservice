@@ -46,3 +46,5 @@ Route::post('/coomercial-room', 'CommercialRoomController@store');
 Route::get('/coomercial-room/{id}', 'CommercialRoomController@show');
 Route::delete('/coomercial-room/{id}', 'CommercialRoomController@destroy');
 Route::put('/coomercial-room/{id}', 'CommercialRoomController@update');
+
+Route::get('/about-us', 'AboutController@index');

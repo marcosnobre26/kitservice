@@ -31,3 +31,24 @@
 </div>
 @endsection
 
+@push('js')
+<script>
+$(document).ready(function() {
+    var addDocument = $('.dynamic-form-documents').last();
+    $('.dynamic-form-documents').last().remove();
+
+    $('.btn-add').on('click', function() {
+        var tr=addDocument;
+        var clone = tr.clone();
+        clone.show();
+
+        $('#table-document tbody').append(clone);
+    });
+
+    $(document).on('click', '.btn-remove', function(){
+        $(this).parents('tr').first().remove();
+    });
+});
+</script>
+@endpush
+

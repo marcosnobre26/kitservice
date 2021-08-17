@@ -25,6 +25,10 @@
           <a class="nav-link" href="{{ route('comercialrooms.index') }}"><i class="fas fa-business-time"></i>Salas Comerciais</a>
         </li>
 
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ route('about.index') }}"><i class="fas fa-american-sign-language-interpreting"></i>Sobre Nós</a>
+        </li>
+
         
         
       </ul>

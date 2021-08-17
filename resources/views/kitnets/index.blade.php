@@ -41,6 +41,8 @@
                             <th scope="col">Banheiros</th>
                             <th scope="col">Preço</th>
                             <th scope="col">Condominio</th>
+                            <th scope="col">Taxa</th>
+                            <th scope="col">Disponivel</th>
                             <th scope="col" class="text-right">Ação</th>
                         </thead>
                         <tbody>
@@ -51,6 +53,12 @@
                                 <td>{{ $item->qtd_bathrooms }}</td>
                                 <td>R${{ $item->value }}</td>
                                 <td>{{ $item->condominium->name }}</td>
+                                <td>R${{ $item->rate }}</td>
+                                @if ($item->status === 0)
+                                    <td><p>Sim</p></td>
+                                @else
+                                    <td><p>Não</p></td>
+                                @endif
                                 <td class="text-right">
                                     <div class="dropdown">
                                         

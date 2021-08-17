@@ -12,7 +12,7 @@ class KitNet extends Model//retirar banheiro e colocar metros quadrados
     protected $table = 'kit_nets';
     
     protected $fillable = ['number', 'image', 'qtd_bedrooms',
-    'qtd_bathrooms','value','condominium_id','description'];
+    'qtd_bathrooms','value','condominium_id','description','rate','status'];
 
     public function condominium()
     {

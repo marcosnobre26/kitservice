@@ -17,13 +17,25 @@
         {!!Form::textarea('description', 'Description')!!}
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-4">
         {!!Form::text('qtd_bedrooms', 'Quantidade de Banheiros')
         ->attrs(['maxlength' => 60])
         !!}
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-2">
+        {!!Form::select('status', 'Disponivel', ['0' => 'Sim', '1' => 'Não'])
+        ->value(isset($item) ? $item->status : 0)
+        !!}
+    </div>
+
+    <div class="col-md-3">
+        {!!Form::text('rate', 'Taxa de Limpeza')
+        ->attrs(['maxlength' => 60, 'class'=>'money'])
+        !!}
+    </div>
+
+    <div class="col-md-3">
         {!!Form::text('value', 'Preço')
         ->attrs(['maxlength' => 60, 'class'=>'money'])
         !!}

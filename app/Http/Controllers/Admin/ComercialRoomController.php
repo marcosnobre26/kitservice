@@ -34,6 +34,10 @@ class ComercialRoomController extends Controller
             $numero = $value->value;
             $moeda=number_format($numero, 2, ',', '.');
             $value->value=$moeda;
+
+            $numero1 = $value->rate;
+            $moeda1=number_format($numero1, 2, ',', '.');
+            $value->rate=$moeda1;
         }
 
         return view('comercialrooms.index', compact('data','comercialpoints'));
@@ -50,14 +54,20 @@ class ComercialRoomController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'number' => 'required',
-            'description' => 'required',
-            'qtd_bedrooms' => 'required',
-            'value' => 'required',
+            'number' => ['required'],
+            'description' => ['required'],
+            'qtd_bedrooms' => ['required'],
+            'value' => ['required'],
+            'status' => ['required'],
+            'rate' => ['required'],
+            'commercial_point_id'=> ['required'],
             ]);
 
         $moeda=str_replace(",", ".", $request->value);
         $request['value']=$moeda.'';
+
+        $moeda=str_replace(",", ".", $request->rate);
+        $request['rate']=$moeda.'';
 
     
         $commercialroom = CommercialRoom::create([
@@ -65,6 +75,9 @@ class ComercialRoomController extends Controller
             'description' => $validatedData['description'],
             'qtd_bedrooms' => $validatedData['qtd_bedrooms'],
             'value' => $request->value,
+            'status' => $validatedData['status'],
+            'rate' => $request->rate,
+            'commercial_point_id' => $request->commercial_point_id,
             ]);
 
         $files = $request->file('imagens');
@@ -95,6 +108,10 @@ class ComercialRoomController extends Controller
         $numero = $item->value;
         $moeda=number_format($numero, 2, ',', '.');
         $item->value=$moeda;
+
+        $numero1 = $item->rate;
+        $moeda1=number_format($numero1, 2, ',', '.');
+        $item->rate=$moeda1;
         
         return view('comercialrooms.show', compact('item','imagens'));
     }
@@ -105,14 +122,20 @@ class ComercialRoomController extends Controller
         $item = CommercialRoom::findOrFail($id);
 
         $validatedData = $request->validate([
-            'number' => 'required',
-            'description' => 'required',
-            'qtd_bedrooms' => 'required',
-            'value' => 'required',
+            'number' => ['required'],
+            'description' => ['required'],
+            'qtd_bedrooms' => ['required'],
+            'value' => ['required'],
+            'rate' => ['required'],
+            'value' => ['required'],
+            'commercial_point_id'=> ['required'],
             ]);
 
         $moeda=str_replace(",", ".", $request->value);
         $request['value']=$moeda.'';
+
+        $moeda=str_replace(",", ".", $request->rate);
+        $request['rate']=$moeda.'';
 
 
         $this->uploadImages($id, $request->SavesImagens);

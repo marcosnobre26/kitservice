@@ -44,6 +44,22 @@ class CommercialPointController extends Controller
             'name' => $validatedData['name'],
             'address' => $validatedData['address'],
             ]);
+
+        $files = $request->file('imagens');
+
+        if($request->hasFile('imagens'))
+        {
+            foreach ($files as $file) {
+
+                $name = $file->getClientOriginalName();
+
+                DB::table('image_commercial_point')->insert([
+                    'image' => '/commercialpoints/'.$commercialpoint->id.'/'.$name,
+                    'commercial_point_id' => $commercialpoint->id
+                ]);
+                $file->storeAs('public/commercialpoints/'.$commercialpoint->id, $name);
+            }
+        }
     
         return redirect()->route('comercialpoints.index')
             ->withStatus('Registro criado com sucesso.');
@@ -52,7 +68,8 @@ class CommercialPointController extends Controller
     public function show($id)
     {
         $item = CommercialPoint::find($id);
-        return view('comercialpoints.show', compact('item'));
+        $imagens = DB::table('image_commercial_point')->where('commercial_point_id','=', $id)->get();
+        return view('comercialpoints.show', compact('item','imagens'));
     }
 
 
@@ -61,6 +78,27 @@ class CommercialPointController extends Controller
         $item = CommercialPoint::findOrFail($id);
         $item->fill($request->all())->save();
 
+        $this->uploadImages($id, $request->SavesImagens);
+
+        $item->fill($request->all())->save();
+
+        $files = $request->file('imagens');
+
+        if($request->hasFile('imagens'))
+        {
+            foreach ($files as $file) {
+
+                $name = $file->getClientOriginalName();
+
+                DB::table('image_commercial_point')->insert([
+                    'image' => '/commercialpoints/'.$item->id.'/'.$name,
+                    'commercial_point_id' => $item->id
+
+                ]);
+                $file->storeAs('public/commercialpoints/'.$item->id, $name);
+            }
+        }
+
         return redirect()->route('comercialpoints.index')
             ->withStatus('Registro atualizado com sucesso.');
     }
@@ -68,6 +106,7 @@ class CommercialPointController extends Controller
     public function destroy($id)
     {
         $item = CommercialPoint::findOrFail($id);
+        $this->deleteAll($id);
 
         try {
             $item->delete();
@@ -79,10 +118,61 @@ class CommercialPointController extends Controller
         }
     }
 
+    protected function deleteAll($id)
+    {
+        Storage::deleteDirectory('/public/commercialpoints/'.$id);
+        DB::table('image_commercial_point')->where('commercial_point_id', $id)->delete();
+    }
+
+    protected function uploadImages($id, $imagens)
+    {
+        $imgs = DB::table('image_commercial_point')
+        ->where('commercial_point_id', '=', $id)
+        ->get();
+
+        foreach ($imgs as $img) {
+            $exists=$this->updateImages($img->id, $imagens,$id);
+
+            if($exists==false)
+            {
+                Storage::disk('public')->delete($img->image);
+                DB::table('image_commercial_point')->where('id', $img->id)->delete();
+            }
+        }
+
+    }
+
+    protected function updateImages($id, $imagens,$idComercialRoom)
+    {
+        $cont=0;
+        if($imagens==null)
+        {
+            $this->deleteAll($idComercialRoom);
+        }
+        else{
+            foreach ($imagens as $image) {
+                if($image==$id)
+                {
+                    $cont=$cont+1;
+                }
+            }
+    
+            if($cont==0)
+            {
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        
+    }
+
     public function edit($id)
     {
         
         $item = CommercialPoint::findOrFail($id);
-        return view('comercialpoints.edit', compact('item'));
+        $imagens = DB::table('image_commercial_point')->where('commercial_point_id','=', $id)->get();
+        return view('comercialpoints.edit', compact('item','imagens'));
     }
 }
