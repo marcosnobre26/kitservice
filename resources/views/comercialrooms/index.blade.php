@@ -55,10 +55,21 @@
                             @forelse ($data as $item)
                             <tr>
                                 <td>{{ $item->number }}</td>
-                                <td>{{ $item->commercialpoint->name }}</td>
-                                <td>{{ $item->commercialpoint->address }}</td>
+                                @if(isset($item->commercialpoint))
+                                    <td>{{ $item->commercialpoint->name }}</td>
+                                @else
+                                    <td></td>
+                                @endif
+
+                                @if(isset($item->commercialpoint))
+                                    <td>{{ $item->commercialpoint->address }}</td>
+                                @else
+                                    <td></td>
+                                @endif
+                                
+                                
                                 <td>R$ {{ $item->value }}</td>
-                                <td>R${{ $item->rate }}</td>
+                                <td>R$ {{ $item->rate }}</td>
                                 @if ($item->status === 0)
                                     <td><p>Sim</p></td>
                                 @else

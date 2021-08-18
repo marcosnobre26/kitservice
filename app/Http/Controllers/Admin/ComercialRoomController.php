@@ -29,6 +29,7 @@ class ComercialRoomController extends Controller
             return $query->where('commercial_point_id', '=' ,$request->commercial_point_id);
         })
         ->paginate(5);
+        
 
         foreach ($data as $money => $value) {
             $numero = $value->value;
