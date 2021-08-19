@@ -24,3 +24,6 @@ export const AddressInfo = styled.span`
 export const DescriptionText = styled.p`
     color: gray;
 `;
+
+export const Tax = styled.p``;
+export const Available = styled.p``;

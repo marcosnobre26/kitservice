@@ -12,42 +12,34 @@ import Navbar from "../Navbar";
 import Footer from "../Footer";
 import AboutHeader from "./AboutHeader";
 
-const About = () => (
-    <div>
-        <Navbar />
-        <AboutHeader />
-        <AboutStyle>
-            <AboutInfo>
-                <AboutTitle>QUEM SOMOS</AboutTitle>
-                <AboutText>
-                    Lorem ip dolor sit amet, consectetur adipiscing elit.
-                    Integer semper nisl non velit condimentum, quis mollis quam
-                    gravida. Aliquam pretium, leo sit amet iaculis euismod,
-                    mauris nisi rhoncus diam, eget rhoncus risus massa quis
-                    magna. Donec velit nisl, pharetra sit amet convallis sit
-                    amet, laoreet id arcu. In id cursus leo. In dolor enim,
-                    vestibulum a justo at.
-                </AboutText>
-            </AboutInfo>
-            <AboutImg src={aboutImg} />
-        </AboutStyle>
-        <AboutStyle>
-            <AboutImg src={build} />
-            <AboutInfo>
-                <AboutTitle>MAIS</AboutTitle>
-                <AboutText>
-                    Lorem ip dolor sit amet, consectetur adipiscing elit.
-                    Integer semper nisl non velit condimentum, quis mollis quam
-                    gravida. Aliquam pretium, leo sit amet iaculis euismod,
-                    mauris nisi rhoncus diam, eget rhoncus risus massa quis
-                    magna. Donec velit nisl, pharetra sit amet convallis sit
-                    amet, laoreet id arcu. In id cursus leo. In dolor enim,
-                    vestibulum a justo at.
-                </AboutText>
-            </AboutInfo>
-        </AboutStyle>
-        <Footer />
-    </div>
-);
+import AboutUs from "../../services/AboutUs";
+import { useEffect, useState } from "react";
+const About = () => {
+    const [aboutText, setAboutText] = useState();
+    const getAbout = async () => {
+        const response = await AboutUs.get();
+        if (response.data) {
+            setAboutText(response.data[0].about);
+        }
+    };
+    useEffect(() => {
+        getAbout();
+    }, []);
+
+    return (
+        <div>
+            <Navbar />
+            <AboutHeader />
+            <AboutStyle>
+                <AboutInfo>
+                    <AboutTitle>QUEM SOMOS</AboutTitle>
+                    <AboutText>{aboutText}</AboutText>
+                </AboutInfo>
+                <AboutImg src={aboutImg} />
+            </AboutStyle>
+            <Footer />
+        </div>
+    );
+};
 
 export default About;

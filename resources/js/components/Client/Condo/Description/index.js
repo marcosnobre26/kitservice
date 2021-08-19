@@ -4,6 +4,8 @@ import {
     Title,
     DescriptionText,
     AddressInfo,
+    Tax,
+    Available,
 } from "./style";
 
 const Description = ({ title, address, description }) => (

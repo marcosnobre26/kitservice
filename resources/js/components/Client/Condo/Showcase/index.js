@@ -14,6 +14,8 @@ const Showcase = ({ data }) => {
                         images={item.imagens}
                         rooms={item.qtd_bedrooms}
                         bathrooms={item.qtd_bathrooms}
+                        tax={item.rate}
+                        available={item.status}
                     />
                 ))}
         </ShowcaseStyle>

@@ -6,7 +6,16 @@ import RentTitle from "./RentTitle";
 import Rooms from "./Rooms";
 import { RentInfoContainer, RentStyle } from "./style";
 
-const Rent = ({ value, title, description, images, rooms, bathrooms }) => (
+const Rent = ({
+    value,
+    title,
+    description,
+    images,
+    rooms,
+    bathrooms,
+    tax,
+    available,
+}) => (
     <RentStyle>
         <RentHeader images={images} />
         <RentInfoContainer>
@@ -15,6 +24,17 @@ const Rent = ({ value, title, description, images, rooms, bathrooms }) => (
             <Rooms rooms={rooms} />
             <Bathrooms bathrooms={bathrooms} />
             <Price price={value} />
+            <p>
+                <span style={{ fontWeight: 600 }}>Taxa:</span> R${tax}
+            </p>
+            <h3
+                style={{
+                    textAlign: "center",
+                    color: available > 0 ? "green" : "red",
+                }}
+            >
+                {available > 0 ? "Disponivel" : "Indisponivel"}
+            </h3>
         </RentInfoContainer>
     </RentStyle>
 );

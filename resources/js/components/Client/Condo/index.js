@@ -27,7 +27,6 @@ const Condo = () => {
         getKitnets();
     }, []);
 
-    console.log(kitnets);
     return (
         <Container>
             <Navbar />
