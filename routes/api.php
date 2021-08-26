@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CondominiumController;
 use App\Http\Controllers\KitNetController;
 use App\Http\Controllers\CommercialRoomController;
+use App\Http\Controllers\CommercialPointController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,3 +49,6 @@ Route::delete('/coomercial-room/{id}', 'CommercialRoomController@destroy');
 Route::put('/coomercial-room/{id}', 'CommercialRoomController@update');
 
 Route::get('/about-us', 'AboutController@index');
+
+Route::get('/coomercial-points', 'CommercialPointController@index');
+Route::get('/coomercial-points/{id}', 'CommercialPointController@show');
