@@ -43,19 +43,38 @@ class CondominiumController extends Controller
 
     public function store(Request $request)
       {
+        
         $validatedData = $request->validate([
           'name' => 'required',
           'description' => 'required',
           'address' => 'required',
         ]);
 
+        if($request->file('banner'))
+        {
+            $banner = $request->file('banner');
+            $bannerName = $banner->getClientOriginalName();
+        }
+        
+        
+
+        
         $condominium = Condominium::create([
           'name' => $validatedData['name'],
           'description' => $validatedData['description'],
           'address' => $validatedData['address'],
         ]);
 
+        if($request->file('banner'))
+        {
+            $banner->storeAs('public/condominium/'.$condominium->id.'/banner/', $bannerName);
+            $ban='/condominium/'.$condominium->id.'/banner/'. $bannerName;
+            $condominium->banner=$ban;
+            $condominium->save();
+        }
+
         $files = $request->file('imagens');
+        
 
         if($request->hasFile('imagens'))
         {
@@ -89,6 +108,7 @@ class CondominiumController extends Controller
     {
         $item = Condominium::findOrFail($id);
         $imagens = DB::table('image_condominium')->where('condominium_id','=', $id)->get();
+        
         return view('condominiums.edit', compact('item','imagens'));
     }
 
@@ -100,12 +120,24 @@ class CondominiumController extends Controller
 
         $item->fill($request->all())->save();
 
+        
+        if($request->file('banner'))
+        {
+            $banner = $request->file('banner');
+            $bannerName = $banner->getClientOriginalName();
+            $banner->storeAs('public/condominium/'.$item->id.'/banner/', $bannerName);
+            $ban='/condominium/'.$item->id.'/banner/'. $bannerName;
+            $item->banner=$ban;
+            $item->save();
+        }
+        else{
+            $item->banner=$request->ban;
+            $item->save();
+        }
+        
         $files = $request->file('imagens');
-
-        /*Validator::make(
-            $request->all(),
-            $this->rules($request, $item->getKey())
-        )->validate();*/
+        
+        $item->save();
 
         if($request->hasFile('imagens'))
         {

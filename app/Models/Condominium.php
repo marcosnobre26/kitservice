@@ -9,7 +9,7 @@ class Condominium extends Model
 {
     use HasFactory;
     
-    protected $fillable = ['name', 'image','address','description'];
+    protected $fillable = ['name', 'image','address','description','banner'];
 
     protected $table = 'condominiums';
 

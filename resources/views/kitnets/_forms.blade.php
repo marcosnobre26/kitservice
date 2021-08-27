@@ -92,9 +92,6 @@
           </tr>
         </thead>
         <tbody>
-            
-            
-          
 
                 @if(isset($imagens))
                     @foreach($imagens as $item)

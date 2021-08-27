@@ -22,6 +22,7 @@ class CommercialPointController extends Controller
     public function index(Request $request)
     {
         $data = CommercialPoint::orderBy('name')->paginate(10);
+        //dd($data);
 
         return view('comercialpoints.index', compact('data'));
     }
@@ -40,10 +41,27 @@ class CommercialPointController extends Controller
             'address' => 'required',
             ]);
 
+        if($request->file('banner'))
+        {
+            $banner = $request->file('banner');
+            $bannerName = $banner->getClientOriginalName();
+        }
+        
+
         $commercialpoint = CommercialPoint::create([
             'name' => $validatedData['name'],
             'address' => $validatedData['address'],
             ]);
+        
+        if($request->file('banner')){
+
+            $banner = $request->file('banner');
+            $bannerName = $banner->getClientOriginalName();
+            $banner->storeAs('public/condominium/'.$commercialpoint->id.'/banner/', $bannerName);
+            $ban='/condominium/'.$commercialpoint->id.'/banner/'. $bannerName;
+            $commercialpoint->banner=$ban;
+            $commercialpoint->save();
+        }
 
         $files = $request->file('imagens');
 
@@ -76,13 +94,27 @@ class CommercialPointController extends Controller
     public function update(Request $request, $id)
     {
         $item = CommercialPoint::findOrFail($id);
-        $item->fill($request->all())->save();
 
         $this->uploadImages($id, $request->SavesImagens);
 
         $item->fill($request->all())->save();
 
+        if($request->file('banner'))
+        {
+            $banner = $request->file('banner');
+            $bannerName = $banner->getClientOriginalName();
+            $banner->storeAs('public/commercialpoints/'.$item->id.'/banner/', $bannerName);
+            $ban='/commercialpoints/'.$item->id.'/banner/'. $bannerName;
+            $item->banner=$ban;
+            $item->save();
+        }
+        else{
+            $item->banner=$request->ban;
+            $item->save();
+        }
+
         $files = $request->file('imagens');
+        $item->save();
 
         if($request->hasFile('imagens'))
         {

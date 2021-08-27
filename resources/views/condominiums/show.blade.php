@@ -34,6 +34,33 @@
                                     </p>
                                 </div>
                             </div>
+                            <div class="container">
+                                <p><strong>Banner: </strong></p>
+                                <div class="card-deck">
+                                    <div class="row">
+                                        @if(isset($item->banner))
+                                                
+                                                
+                                            <div class="col-4 p-2">
+                                                
+                                                    
+                                                <img id="{{$item->id}}" class="img-upload-show" src="{{asset((isset($item) && $item->banner!= null)?'storage/'.$item->banner:'img/noimage.png')}}" alt="Minha Figura">
+
+                                                
+                                            </div>
+                                                
+                                                
+                                        @else
+                                            <div class="card m-2 shadow-sm">
+                                                <div class="card-body">
+                                                    
+                                                    <p>Sem imagem</p>
+                                                </div>
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
                             
                         </div>
                         

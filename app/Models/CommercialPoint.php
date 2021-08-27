@@ -9,7 +9,7 @@ class CommercialPoint extends Model//mesma coisa dos atibutos de kitnets com ape
 {
     use HasFactory;
     
-    protected $fillable = ['name', 'address'];
+    protected $fillable = ['name', 'address','banner'];
 
     protected $table = 'commercial_points';
 

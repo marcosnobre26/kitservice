@@ -26,7 +26,7 @@ class AddAddressToCommercialRoom extends Migration
     public function down()
     {
         Schema::table('commercial_room', function (Blueprint $table) {
-            $table->dropColumn('address');
+            //$table->dropColumn('address');
         });
     }
 }

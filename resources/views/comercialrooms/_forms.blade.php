@@ -41,6 +41,8 @@
         !!}
     </div>
 
+    
+
     <table class="table" id="table-document">
         <thead>
           <tr>
@@ -67,7 +69,11 @@
                 Documento</button>
         </div>
     </div>
+
+    
 </div>
+
+
 
 <div>
     <table>

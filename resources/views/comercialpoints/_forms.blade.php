@@ -11,6 +11,62 @@
         !!}
     </div>
 
+    <div class="card-deck">
+        
+        <div class="card-body">
+            <p><strong>Banner: </strong></p>
+            <input type="hidden" />
+            <div class="custom-file">
+                @if(isset($item->banner))
+                <input type="text" class="custom-file-input" name="ban" id="input_img_itens" value="{{$item->banner}}" hidden>
+                @endif
+                <input type="file" class="custom-file-input" name="banner" id="input_img_itens">
+                <label class="custom-file-label" for="input_img_itens">Escolha o arquivo</label>
+            </div>
+        </div>
+        
+    </div>
+
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Banner:</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                
+            
+
+                    @if(isset($item->banner))
+                        
+                            <tr>
+                                <td></td>
+
+                                <td>
+                                <img id="{{$item->id}}" class="img-upload-banner" src="{{asset((isset($item) && $item->banner!= null)?'storage/'.$item->banner:'img/noimage.png')}}" alt="Minha Figura">
+                                </td>
+                            </tr>
+                        
+
+                    @else
+                        <tr>
+                            <td>
+                                
+                            </td>
+                            <td>
+                                <p>Sem imagem</p>
+                            </td>
+                        </tr>
+                    @endif
+                
+            </tbody>
+            
+        </table>
+    </div>
+
     <table class="table" id="table-document">
         <thead>
           <tr>

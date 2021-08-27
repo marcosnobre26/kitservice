@@ -28,6 +28,6 @@ class CreateCommercialPointsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('commercial_points');
+        //Schema::dropIfExists('commercial_points');
     }
 }

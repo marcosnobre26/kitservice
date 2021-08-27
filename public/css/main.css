@@ -1399,6 +1399,10 @@ A VERTICAL event
   width: 50%;
 }
 
+.img-upload-banner{
+  width: 90%;
+}
+
 .img-upload-show{
   width: 100%;
   height: 100%;
