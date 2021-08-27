@@ -21,7 +21,7 @@ class CommercialPointController extends Controller
 
     public function index(Request $request)
     {
-        $data = CommercialPoint::orderBy('name')->paginate(10);
+        $data = CommercialPoint::orderBy('name')->paginate(20);
         //dd($data);
 
         return view('comercialpoints.index', compact('data'));

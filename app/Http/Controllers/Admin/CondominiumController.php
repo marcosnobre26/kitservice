@@ -30,7 +30,7 @@ class CondominiumController extends Controller
             return $query->where('name', 'like', '%' . $request->name . '%');
         })
         //->where('address', 'like', '%' . $request->address . '%')
-        ->paginate(5);
+        ->paginate(20);
 
         
         return view('condominiums.index', compact('data'));

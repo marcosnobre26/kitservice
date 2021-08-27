@@ -28,7 +28,7 @@ class ComercialRoomController extends Controller
         ->when($request->has('commercial_point_id'), function($query) use($request){
             return $query->where('commercial_point_id', '=' ,$request->commercial_point_id);
         })
-        ->paginate(5);
+        ->paginate(20);
         
 
         foreach ($data as $money => $value) {

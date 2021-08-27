@@ -28,7 +28,7 @@ class KitNetController extends Controller
         ->when($request->has('condominium_id'), function ($query) use ($request) {
             return $query->where('kit_nets.condominium_id',$request->condominium_id);
         })
-        ->paginate(5);
+        ->paginate(20);
 
         foreach ($data as $money => $value) {
             $numero = $value->value;
