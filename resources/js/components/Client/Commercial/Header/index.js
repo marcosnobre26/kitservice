@@ -1,7 +1,7 @@
 import { HeaderStyle, HeaderTitle } from "./style";
 
-const Header = () => (
-    <HeaderStyle>
+const Header = ({ banner }) => (
+    <HeaderStyle banner={banner}>
         <HeaderTitle>BUSQUE ALUGUEIS</HeaderTitle>
     </HeaderStyle>
 );

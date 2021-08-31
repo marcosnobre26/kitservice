@@ -12,7 +12,7 @@ const Description = ({ title, address, description }) => (
     <Container>
         <Title>{title.toUpperCase()}</Title>
         <Address>
-            Address: <AddressInfo>{address}</AddressInfo>
+            Endereço: <AddressInfo>{address}</AddressInfo>
         </Address>
         <DescriptionText>{description}</DescriptionText>
     </Container>

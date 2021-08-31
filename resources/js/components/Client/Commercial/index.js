@@ -32,7 +32,7 @@ const Commercial = () => {
     return (
         <Container>
             <Navbar />
-            <Header />
+            <Header banner={condo && condo.banner} />
             {condo ? (
                 <Description
                     title={condo.name}

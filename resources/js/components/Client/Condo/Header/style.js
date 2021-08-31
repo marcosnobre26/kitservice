@@ -3,7 +3,7 @@ import back from "../../../../../media/back.jpg";
 
 export const HeaderStyle = styled.div`
     height: 500px;
-    background-image: url(${back});
+    background-image: url(${(props) => (props.banner ? props.banner : back)});
     background-position: center center;
     background-size: cover;
     display: flex;
