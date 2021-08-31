@@ -30,10 +30,10 @@ const Rent = ({
             <h3
                 style={{
                     textAlign: "center",
-                    color: available > 0 ? "green" : "red",
+                    color: available > 0 ? "red" : "green",
                 }}
             >
-                {available > 0 ? "Disponivel" : "Indisponivel"}
+                {available > 0 ? "Indisponivel" : "Disponivel"}
             </h3>
         </RentInfoContainer>
     </RentStyle>

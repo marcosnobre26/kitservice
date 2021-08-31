@@ -16,6 +16,7 @@ const Condo = () => {
     const [kitnets, setKitnets] = useState();
     const getCondominiums = () => {
         CondominiumsService.getid(id).then((data) => {
+            console.log(data.data);
             setCondo(data.data);
         });
     };
@@ -32,7 +33,7 @@ const Condo = () => {
     return (
         <Container>
             <Navbar />
-            <Header />
+            <Header banner={condo && condo.banner} />
             {condo ? (
                 <Description
                     title={condo.name}
