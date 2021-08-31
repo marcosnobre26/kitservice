@@ -27,7 +27,7 @@ class CommercialPointController extends Controller
 
     public function show($id)
     {
-        $commercialpoint = CommercialPoint::find($id)->first();
+        $commercialpoint = CommercialPoint::find($id);
 
         $commercialpoint->imagens=DB::table('image_commercial_point')->where('commercial_point_id', $id)->get();
 

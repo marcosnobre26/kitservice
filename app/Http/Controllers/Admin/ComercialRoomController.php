@@ -243,9 +243,7 @@ class ComercialRoomController extends Controller
             'code' => ['required'],
             'is_enabled' => ['required']
         ];
-
         $messages = [];
-
         return !$changeMessages ? $rules : $messages;
     }*/
 }

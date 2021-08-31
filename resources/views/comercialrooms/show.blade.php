@@ -84,7 +84,7 @@
                         <p><strong>Imagens: </strong></p>
                         <div class="card-deck">
                             <div class="row">
-                                @if(isset($imagens))
+                                @if(!isset($imagens))
                                         @foreach($imagens as $item)
                                         
                                             <div class="col-4 p-2">
