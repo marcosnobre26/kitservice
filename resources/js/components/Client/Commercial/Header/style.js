@@ -4,7 +4,7 @@ import back from "../../../../../media/back.jpg";
 export const HeaderStyle = styled.div`
     height: 500px;
     background-image: url(${(props) =>
-        props.banner ? "/storage/" + props.banner : back});
+        props.banner ? "/storage/" + props.banner : ""});
     background-position: center center;
     background-size: cover;
     display: flex;
