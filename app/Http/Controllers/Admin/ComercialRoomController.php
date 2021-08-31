@@ -31,15 +31,7 @@ class ComercialRoomController extends Controller
         ->paginate(20);
         
 
-        foreach ($data as $money => $value) {
-            $numero = $value->value;
-            $moeda=number_format($numero, 2, ',', '.');
-            $value->value=$moeda;
-
-            $numero1 = $value->rate;
-            $moeda1=number_format($numero1, 2, ',', '.');
-            $value->rate=$moeda1;
-        }
+        
 
         return view('comercialrooms.index', compact('data','comercialpoints'));
     }
@@ -63,13 +55,6 @@ class ComercialRoomController extends Controller
             'rate' => ['required'],
             'commercial_point_id'=> ['required'],
             ]);
-
-        $moeda=str_replace(",", ".", $request->value);
-        $request['value']=$moeda.'';
-
-        $moeda=str_replace(",", ".", $request->rate);
-        $request['rate']=$moeda.'';
-
     
         $commercialroom = CommercialRoom::create([
             'number' => $validatedData['number'],
@@ -105,14 +90,6 @@ class ComercialRoomController extends Controller
     {
         $item = CommercialRoom::find($id);
         $imagens = DB::table('image_commercial_room')->where('commercial_room_id','=', $id)->get();
-
-        $numero = $item->value;
-        $moeda=number_format($numero, 2, ',', '.');
-        $item->value=$moeda;
-
-        $numero1 = $item->rate;
-        $moeda1=number_format($numero1, 2, ',', '.');
-        $item->rate=$moeda1;
         
         
         return view('comercialrooms.show', compact('item','imagens'));
@@ -132,12 +109,6 @@ class ComercialRoomController extends Controller
             'value' => ['required'],
             'commercial_point_id'=> ['required'],
             ]);
-
-        $moeda=str_replace(",", ".", $request->value);
-        $request['value']=$moeda.'';
-
-        $moeda=str_replace(",", ".", $request->rate);
-        $request['rate']=$moeda.'';
 
 
         $this->uploadImages($id, $request->SavesImagens);

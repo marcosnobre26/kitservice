@@ -29,16 +29,6 @@ class KitNetController extends Controller
             return $query->where('kit_nets.condominium_id',$request->condominium_id);
         })
         ->paginate(20);
-
-        foreach ($data as $money => $value) {
-            $numero = $value->value;
-            $moeda=number_format($numero, 2, ',', '.');
-            $value->value=$moeda;
-
-            $numero1 = $value->rate;
-            $moeda1=number_format($numero1, 2, ',', '.');
-            $value->rate=$moeda1;
-        }
         
         return view('kitnets.index', compact('data','condominiuns'));
     }
@@ -64,12 +54,6 @@ class KitNetController extends Controller
             'condominium_id' => ['required'],
             ]);
 
-        $moeda=str_replace(",", ".", $request->value);
-        $request['value']=$moeda.'';
-
-        $moeda=str_replace(",", ".", $request->rate);
-        $request['rate']=$moeda.'';
-    
         $kitnet = KitNet::create([
             'number' => $validatedData['number'],
             'description' => $validatedData['description'],
@@ -106,14 +90,6 @@ class KitNetController extends Controller
         $item = KitNet::with('condominium')->find($id);
         $imagens = DB::table('image_kit_net')->where('kit_net_id','=', $id)->get();
 
-        $numero = $item->value;
-        $moeda=number_format($numero, 2, ',', '.');
-        $item->value=$moeda;
-
-        $numero1 = $item->rate;
-        $moeda1=number_format($numero1, 2, ',', '.');
-        $item->rate=$moeda1;
-
         return view('kitnets.show', compact('item','imagens'));
     }
 
@@ -133,11 +109,6 @@ class KitNetController extends Controller
             'condominium_id' => ['required'],
             ]);
 
-        $moeda=str_replace(",", ".", $request->value);
-        $request['value']=$moeda.'';
-
-        $moeda=str_replace(",", ".", $request->rate);
-        $request['rate']=$moeda.'';
         
         $this->uploadImages($id, $request->SavesImagens);
 
