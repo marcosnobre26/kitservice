@@ -21,7 +21,8 @@ class CommercialPointController extends Controller
         foreach ($commercialpoints as $commercialpoint) {
             $commercialpoint->imagens=DB::table('image_commercial_point')->where('commercial_point_id', $commercialpoint->id)->get();
         }
-        return $commercialpoint->toJson();
+
+        return $commercialpoints->toJson();
     }
 
     public function show($id)
