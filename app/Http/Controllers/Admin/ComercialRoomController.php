@@ -114,6 +114,7 @@ class ComercialRoomController extends Controller
         $moeda1=number_format($numero1, 2, ',', '.');
         $item->rate=$moeda1;
         
+        
         return view('comercialrooms.show', compact('item','imagens'));
     }
 
