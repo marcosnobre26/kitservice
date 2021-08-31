@@ -52,3 +52,4 @@ Route::get('/about-us', 'AboutController@index');
 
 Route::get('/coomercial-points', 'CommercialPointController@index');
 Route::get('/coomercial-points/{id}', 'CommercialPointController@show');
+Route::get('/coomercial-points/{id}/coomercial-rooms/', 'CommercialPointController@getForCommercialPoint');

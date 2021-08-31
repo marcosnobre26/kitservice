@@ -39,4 +39,15 @@ class CommercialPointController extends Controller
 
         return $commercialpoint->toJson();
     }
+
+    public function getForCommercialPoint(Request $request, $id)
+    {
+        $commercialrooms = CommercialRoom::where('commercial_point_id', $request->id)->get();
+
+        foreach ($commercialrooms as $commercialroom) {
+            $commercialroom->imagens=DB::table('image_commercial_room')->where('commercial_room_id', $commercialroom->id)->get();
+        }
+
+        return $commercialrooms->toJson();
+    }
 }
