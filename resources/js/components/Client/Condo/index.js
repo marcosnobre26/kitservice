@@ -3,13 +3,15 @@ import Navbar from "../Navbar";
 import Header from "./Header";
 import { Container } from "./style";
 import Showcase from "./Showcase";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import CondominiumsService from "../../services/CondominiumsService";
 import { useEffect, useState } from "react";
 import Description from "./Description";
 import Unavailable from "./Unavailable";
 const Condo = () => {
     const { id } = useParams();
+    const location = useLocation();
+    console.log(location);
     const [condo, setCondo] = useState();
     const [kitnets, setKitnets] = useState();
     const getCondominiums = () => {

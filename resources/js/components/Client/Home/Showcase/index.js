@@ -9,7 +9,7 @@ import "./styles.css";
 
 import Slider from "react-slick";
 
-const Showcase = ({ condos }) => {
+const Showcase = ({ condos, type }) => {
     const [current, setCurrent] = useState(0);
     const ref = useRef();
     const scroll = (direction) => {
@@ -46,6 +46,7 @@ const Showcase = ({ condos }) => {
             <Section>
                 {page.map((condo) => (
                     <Rent
+                        type={type}
                         key={condo.id}
                         title={condo.name}
                         address={condo.address}

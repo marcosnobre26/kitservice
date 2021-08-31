@@ -20,7 +20,7 @@ const Home = () => {
     };
 
     const getCommercial = () => {
-        CommercialRoomService.get().then((data) => {
+        CommercialRoomService.getCommercialPoints().then((data) => {
             setCommercial(data.data);
         });
     };
@@ -37,7 +37,7 @@ const Home = () => {
             <Search />
             <div>
                 <Showcase condos={condos} />
-                <Showcase condos={commercial} />
+                <Showcase condos={commercial} type="commercial" />
             </div>
             <Footer />
         </HomeStyle>

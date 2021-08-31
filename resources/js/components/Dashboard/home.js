@@ -22,9 +22,7 @@ const Home = (route) => {
     const retrieveCondominiums = () => {
         CondominiumsService.get()
             .then((response) => {
-                console.log(response.data);
                 setCondominiums(response.data);
-                console.log(response.data);
             })
             .catch((e) => {
                 console.log(e);
@@ -42,7 +40,6 @@ const Home = (route) => {
     const deleteCondominium = (id) => {
         CondominiumsService.remove(id)
             .then((response) => {
-                console.log(response.data);
                 window.location.reload();
             })
             .catch((e) => {
@@ -50,9 +47,7 @@ const Home = (route) => {
             });
     };
 
-    return (
-        <div>teste</div>
-    );
+    return <div>teste</div>;
 };
 
 export default Home;
