@@ -33,7 +33,7 @@ const Home = () => {
     return (
         <HomeStyle>
             <Navbar />
-            <Header />
+            {condos.length > 0 && <Header condos={condos} />}
             <Search />
             <div>
                 <Showcase condos={condos} />
