@@ -23,9 +23,9 @@ export const Section = styled.div`
 export const BackImg = styled.div`
     width: 100%;
     height: 100%;
-    background-image: url(${(props) => props.img});
+    background-image: url(${(props) => "/storage" + props.img});
     background-size: cover;
-    background-position: center center;
+    background-position: top center;
 `;
 
 export const NextBtn = styled.button`

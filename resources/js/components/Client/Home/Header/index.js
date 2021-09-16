@@ -5,9 +5,12 @@ import "@brainhubeu/react-carousel/lib/style.css";
 import slide1 from "../../../../../media/slide1.jpeg";
 import slide2 from "../../../../../media/slide2.jpeg";
 const Header = ({ condos }) => {
-    const banners = condos.map((condo) => (
-        <img style={{ width: "100%" }} src={"/storage" + condo.banner} />
-    ));
+    const banners = condos.map(
+        (condo) =>
+            //<img style={{ width: "100%" }} src={"/storage" + condo.banner} />
+            condo.banner
+    );
+    console.log(banners);
     return (
         <HeaderStyle>
             {banners && (
@@ -24,9 +27,13 @@ const Header = ({ condos }) => {
                             },
                         },
                     ]}
-                    slides={banners}
                 >
-                    {/* <Section>
+                    {banners.map((banner, index) => (
+                        <Section key={index}>
+                            <BackImg img={banner} />
+                        </Section>
+                    ))}
+                    {/* <Section>€ý,€ý,
                     <BackImg img={slide1} />
                     <BackImg img={slide1} />
                     <BackImg img={slide1} />
