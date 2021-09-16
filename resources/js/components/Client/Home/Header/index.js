@@ -1,5 +1,8 @@
 import { HeaderStyle, Section, NextBtn, PrevBtn, BackImg } from "./style";
-import Carousel, { arrowsPlugin } from "@brainhubeu/react-carousel";
+import Carousel, {
+    arrowsPlugin,
+    autoplayPlugin,
+} from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 
 import slide1 from "../../../../../media/slide1.jpeg";
@@ -25,6 +28,9 @@ const Header = ({ condos }) => {
                                 arrowRightDisabled: <></>,
                                 addArrowClickHandler: true,
                             },
+                        },
+                        {
+                            resolve: autoplayPlugin,
                         },
                     ]}
                 >

@@ -8,12 +8,11 @@ export const HeaderStyle = styled.div`
 `;
 
 export const Section = styled.div`
-    height: 80vh;
     min-height: 400px;
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 `;
 
 export const HeaderImg = styled.img`
