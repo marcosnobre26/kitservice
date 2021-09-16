@@ -8,7 +8,7 @@ export const HeaderStyle = styled.div`
 `;
 
 export const Section = styled.div`
-    min-height: 400px;
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
