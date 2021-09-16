@@ -7,6 +7,15 @@ export const HeaderStyle = styled.div`
     position: relative;
 `;
 
+export const Section = styled.div`
+    height: 80vh;
+    min-height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
 export const HeaderImg = styled.img`
     width: 100%;
     height: auto;

@@ -1,4 +1,4 @@
-import { HeaderImg, HeaderStyle, PrevBtn, NextBtn } from "./style";
+import { HeaderImg, HeaderStyle, PrevBtn, NextBtn, Section } from "./style";
 import Carousel, { arrowsPlugin } from "@brainhubeu/react-carousel";
 
 const RentHeader = ({ images }) => (
@@ -20,7 +20,9 @@ const RentHeader = ({ images }) => (
         >
             {images &&
                 images.map((image, index) => (
-                    <HeaderImg key={index} src={"/storage" + image.image} />
+                    <Section>
+                        <HeaderImg key={index} src={"/storage" + image.image} />
+                    </Section>
                 ))}
         </Carousel>
     </HeaderStyle>
