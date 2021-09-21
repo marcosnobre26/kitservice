@@ -70,7 +70,21 @@ const Showcase = ({ condos, type }) => {
 
     return (
         <ShowcaseStyle>
-            <Slider {...settings}>{toRender}</Slider>
+            {/*<Slider {...settings}>{toRender}</Slider> */}
+            <Section>
+                {condos &&
+                    condos.map((condo) => (
+                        <Rent
+                            type={type}
+                            key={condo.id}
+                            title={condo.name}
+                            address={condo.address}
+                            description={condo.description}
+                            id={condo.id}
+                            images={condo.imagens}
+                        />
+                    ))}
+            </Section>
         </ShowcaseStyle>
     );
 };
